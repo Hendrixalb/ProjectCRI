@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <!doctype html>
 
+=======
+<!DOCTYPE html>
+>>>>>>> f0fe182c78507411494fc815237aaed97403ae8e
 <html><head>
 <meta charset="utf-8">
 <title>Control de Estudiantes Egresados </title>
