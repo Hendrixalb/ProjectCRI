@@ -47,8 +47,12 @@
 					<thead>
 						<tr>
 							<th width="10%">Carnet</th>
+							<th width="35%">id</th>
 							<th width="35%">Nombre</th>
 							<th width="35%">Apellidos</th>
+							<th width="35%">Trabajo-Gra</th>
+							<th width="35%">Egreso</th>
+							<th width="35%">Graduacion</th>
 							<th width="10%">Editar</th>
 							<th width="10%">Borrar</th>
 						</tr>
