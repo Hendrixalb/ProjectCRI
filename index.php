@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-<!doctype html>
-
-=======
 <!DOCTYPE html>
->>>>>>> f0fe182c78507411494fc815237aaed97403ae8e
+
 <html><head>
 <meta charset="utf-8">
 <title>Control de Estudiantes Egresados </title>
@@ -47,10 +43,10 @@
 					<thead>
 						<tr>
 							<th width="10%">Carnet</th>
-							<th width="35%">id</th>
+							<th width="10%">id</th>
 							<th width="35%">Nombre</th>
 							<th width="35%">Apellidos</th>
-							<th width="35%">Trabajo-Gra</th>
+							<th width="15%">Trabajo-Gra.</th>
 							<th width="35%">Egreso</th>
 							<th width="35%">Graduacion</th>
 							<th width="10%">Editar</th>
@@ -70,24 +66,34 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add User</h4>
+					<h4 class="modal-title">Agregar Usuario</h4>
 				</div>
 				<div class="modal-body">
-					<label>Enter First Name</label>
-					<input type="text" name="first_name" id="first_name" class="form-control" />
+					<label>Carnet</label>
+					<input type="text" name="carnet" id="carnet" class="form-control" />
 					<br />
-					<label>Enter Last Name</label>
-					<input type="text" name="last_name" id="last_name" class="form-control" />
+					<label>Nombres</label>
+					<input type="text" name="nombres" id="nombres" class="form-control" />
 					<br />
-					<label>Select User Image</label>
-					<input type="file" name="user_image" id="user_image" />
-					<span id="user_uploaded_image"></span>
+					<label>Apellidos</label>
+					<input type="text" name="apellidos" id="Apellidos" class="form-control" />
+					<br />
+					<label>Tabajo de Graduacion</label>
+					<input type="date" name="trb_grad" id="trb_grad" class="form-control" />
+					<br />
+					<label>Egreso</label>
+					<input type="date" name="egreso" id="egreso" class="form-control" />
+					<br />
+					<label>Graduacion</label>
+					<input type="date" name="grad" id="gra" class="form-control" />
+					<br />
+					
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" name="user_id" id="user_id" />
 					<input type="hidden" name="operation" id="operation" />
 					<input type="submit" name="action" id="action" class="btn btn-success" value="Add" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerar</button>
 				</div>
 			</div>
 		</form>
