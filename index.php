@@ -85,15 +85,14 @@
 					<input type="date" name="egreso" id="egreso" class="form-control" />
 					<br />
 					<label>Graduacion</label>
-					<input type="date" name="grad" id="gra" class="form-control" />
+					<input type="date" name="gra" id="gra" class="form-control" />
 					<br />
-					
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" name="user_id" id="user_id" />
 					<input type="hidden" name="operation" id="operation" />
 					<input type="submit" name="action" id="action" class="btn btn-success" value="Add" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cerar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
 			</div>
 		</form>
