@@ -11,19 +11,25 @@ if(isset($_POST["operation"]))
 			$image = upload_image();
 		}
 		$statement = $connection->prepare("
-			INSERT INTO users (first_name, last_name, image) 
-			VALUES (:first_name, :last_name, :image)
+			INSERT INTO estudiantes (Carnet, Nombres, Apellidos, Sexo, Cod_ca, Trb_gra, Fecha_egre, Fecha_grad, image) 
+			VALUES (:Carnet, :Nombres, :Apellidos, :Sexo, :Cod_ca, :Trb_gra, :Fecha_egre, :Fecha_grad, :image)
 		");
 		$result = $statement->execute(
 			array(
-				':first_name'	=>	$_POST["first_name"],
-				':last_name'	=>	$_POST["last_name"],
+				':Carnet'	=>	$_POST["Carnet"],
+				':Nombres'	=>	$_POST["Nombres"],
+				':Apellidos'	=>	$_POST["Apellidos"],
+				':Sexo'	=>	$_POST["Sexo"],
+				':Cod_ca'	=>	$_POST["Cod_ca"],
+				':Trb_gra'	=>	$_POST["Trb_gra"],
+				':Fecha_egre'	=>	$_POST["Fecha_egre"],
+				':Fecha_grad'	=>	$_POST["Fecha_grad"],
 				':image'		=>	$image
 			)
 		);
 		if(!empty($result))
 		{
-			echo 'Data Inserted';
+			echo 'Datos ingresados';
 		}
 	}
 	if($_POST["operation"] == "Edit")
@@ -38,22 +44,27 @@ if(isset($_POST["operation"]))
 			$image = $_POST["hidden_user_image"];
 		}
 		$statement = $connection->prepare(
-			"UPDATE users 
-			SET first_name = :first_name, last_name = :last_name, image = :image  
-			WHERE id = :id
+			"UPDATE estudiantes 
+			SET Carnet = :Carnet, Nombres = :Nombres, Apellidos = :Apellidos, Sexo = :Sexo, Cod_ca = :Cod_ca, Trb_gra = :Trb_gra, Fecha_egre = :Fecha_egre, Fecha_grad = :Fecha_grad, image = :image  
+			WHERE Carnet = :Carnet
 			"
 		);
 		$result = $statement->execute(
 			array(
-				':first_name'	=>	$_POST["first_name"],
-				':last_name'	=>	$_POST["last_name"],
+				':Nombres'	=>	$_POST["Nombres"],
+				':Apellidos'	=>	$_POST["Apellidos"],
+				':Sexo'	=>	$_POST["Sexo"],
+				':Cod_ca'	=>	$_POST["Cod_ca"],
+				':Trb_gra'	=>	$_POST["Trb_gra"],
+				':Fecha_egre'	=>	$_POST["Fecha_egre"],
+				':Fecha_grad'	=>	$_POST["Fecha_grad"],
 				':image'		=>	$image,
-				':id'			=>	$_POST["user_id"]
+				':Carnet'			=>	$_POST["user_id"]
 			)
 		);
 		if(!empty($result))
 		{
-			echo 'Data Updated';
+			echo 'Datos actualizados';
 		}
 	}
 }

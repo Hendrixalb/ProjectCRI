@@ -3,7 +3,7 @@ include('db.php');
 include('function.php');
 $query = '';
 $output = array();
-$query .= "SELECT * FROM users ";
+$query .= "SELECT * FROM estudiantes";
 if(isset($_POST["search"]["value"]))
 {
 	$query .= 'WHERE first_name LIKE "%'.$_POST["search"]["value"].'%" ';
@@ -39,8 +39,14 @@ foreach($result as $row)
 	}
 	$sub_array = array();
 	$sub_array[] = $image;
-	$sub_array[] = $row["first_name"];
-	$sub_array[] = $row["last_name"];
+	$sub_array[] = $row["Carnet"];
+	$sub_array[] = $row["Nombres"];
+	$sub_array[] = $row["Apellidos"];
+	$sub_array[] = $row["Sexo"];
+	$sub_array[] = $row["Cod_ca"];
+	$sub_array[] = $row["Trb_gra"];
+	$sub_array[] = $row["Fecha_egre"];
+	$sub_array[] = $row["Fecha_grad"];
 	$sub_array[] = '<button type="button" name="update" id="'.$row["id"].'" class="btn btn-warning btn-xs update">Update</button>';
 	$sub_array[] = '<button type="button" name="delete" id="'.$row["id"].'" class="btn btn-danger btn-xs delete">Delete</button>';
 	$data[] = $sub_array;
