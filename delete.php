@@ -11,17 +11,17 @@ if(isset($_POST["user_id"]))
 		unlink("upload/" . $image);
 	}
 	$statement = $connection->prepare(
-		"DELETE FROM users WHERE id = :id"
+		"DELETE FROM estudiantes WHERE Carnet = :Carnet"
 	);
 	$result = $statement->execute(
 		array(
-			':id'	=>	$_POST["user_id"]
+			':Carnet}'	=>	$_POST["user_id"]
 		)
 	);
 	
 	if(!empty($result))
 	{
-		echo 'Data Deleted';
+		echo 'Datos eliminados';
 	}
 }
 

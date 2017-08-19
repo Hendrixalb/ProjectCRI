@@ -56,28 +56,28 @@
 				</div>
 				<div class="modal-body">
 					<label>Carnet</label>
-					<input type="text" name="carnet" id="carnet" class="form-control" />
+					<input type="text" name="Carnet" id="Carnet" class="form-control" />
 					<br />
 					<label>Nombres</label>
-					<input type="text" name="nombres" id="nombres" class="form-control" />
+					<input type="text" name="Nombres" id="Nombres" class="form-control" />
 					<br />
 					<label>Apellidos</label>
-					<input type="text" name="apellidos" id="Apellidos" class="form-control" />
+					<input type="text" name="Apellidos" id="Apellidos" class="form-control" />
 					<br />
 					<label>Sexo</label>
-					<input type="select" name="egreso" id="egreso" class="form-control" />
+					<input type="select" name="Sexo" id="Sexo" class="form-control" />
 					<br />
 					<label>Codigo de carrera</label>
-					<input type="date" name="egreso" id="egreso" class="form-control" />
+					<input type="text" name="Cod_ca" id="Cod_ca" class="form-control" />
 					<br />
 					<label>Tabajo de Graduacion</label>
-					<input type="date" name="trb_grad" id="trb_grad" class="form-control" />
+					<input type="date" name="Trb_grad" id="Trb_grad" class="form-control" />
 					<br />
 					<label>Egreso</label>
-					<input type="date" name="egreso" id="egreso" class="form-control" />
+					<input type="date" name="Fecha_egre" id="Fecha_egre" class="form-control" />
 					<br />
 					<label>Graduacion</label>
-					<input type="date" name="gra" id="gra" class="form-control" />
+					<input type="date" name="Fecha_grad" id="Fecha_grad" class="form-control" />
 					<br />
 				</div>
 				<div class="modal-footer">
@@ -146,7 +146,7 @@ $(document).ready(function(){
 				return false;
 			}
 		}	
-		if(firstName != '' && lastName != '')
+		if(Carnet != '' && Nombres != '' )
 		{
 			$.ajax({
 				url:"insert.php",
