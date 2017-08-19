@@ -170,7 +170,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click', '.update', function(){
-		var user_id = $(this).attr("id");
+		var user_id = $(this).attr("Carnet");
 		$.ajax({
 			url:"fetch_single.php",
 			method:"POST",
@@ -197,7 +197,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click', '.delete', function(){
-		var user_id = $(this).attr("id");
+		var user_id = $(this).attr("Carnet");
 		if(confirm("Esta seguro de eliminar?"))
 		{
 			$.ajax({
