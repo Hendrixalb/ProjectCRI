@@ -146,7 +146,7 @@ $(document).ready(function(){
 				return false;
 			}
 		}	
-		if(Carnet != '' && Nombres != '' )
+		if(Carnet != '' && Nombres != '' && Apellidos != '' && Sexo != '' && Cod_ca != '' && Trb_gra != '' && Fecha_egre != '' && Fecha_grad != '')
 		{
 			$.ajax({
 				url:"insert.php",
@@ -165,7 +165,7 @@ $(document).ready(function(){
 		}
 		else
 		{
-			alert("Both Fields are Required");
+			alert("Ambos campos son requeridos");
 		}
 	});
 	
