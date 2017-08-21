@@ -112,11 +112,7 @@ $(document).ready(function(){
 		},
 		"columnDefs":[
 			{
-<<<<<<< HEAD
-				"targets":[0, 8, 7],
-=======
 				"targets":[0, 0, 0],
->>>>>>> 9eae3a13617954ddd5130a25ce6a87933da7e09b
 				"orderable":false,
 			},
 		],
