@@ -24,25 +24,25 @@ $(document).ready(function() {
 			var form = $(this);
 
 			// validation
-			var name = $("#name").val();
-			var address = $("#address").val();
+			var fname = $("#fname").val();
+			var lname = $("#lname").val();
 			var contact = $("#contact").val();
 			var active = $("#active").val();
 
-			if(name == "") {
-				$("#name").closest('.form-group').addClass('has-error');
-				$("#name").after('<p class="text-danger">The Name field is required</p>');
+			if(fname == "") {
+				$("#fname").closest('.form-group').addClass('has-error');
+				$("#fname").after('<p class="text-danger">The Name field is required</p>');
 			} else {
-				$("#name").closest('.form-group').removeClass('has-error');
-				$("#name").closest('.form-group').addClass('has-success');				
+				$("#fname").closest('.form-group').removeClass('has-error');
+				$("#fname").closest('.form-group').addClass('has-success');				
 			}
 
-			if(address == "") {
-				$("#address").closest('.form-group').addClass('has-error');
-				$("#address").after('<p class="text-danger">The Address field is required</p>');
+			if(lname == "") {
+				$("#lname").closest('.form-group').addClass('has-error');
+				$("#lname").after('<p class="text-danger">The Address field is required</p>');
 			} else {
-				$("#address").closest('.form-group').removeClass('has-error');
-				$("#address").closest('.form-group').addClass('has-success');				
+				$("#lname").closest('.form-group').removeClass('has-error');
+				$("#lname").closest('.form-group').addClass('has-success');				
 			}
 
 			if(contact == "") {
@@ -61,7 +61,7 @@ $(document).ready(function() {
 				$("#active").closest('.form-group').addClass('has-success');				
 			}
 
-			if(name && address && contact && active) {
+			if(fname && lname && contact && active) {
 				//submi the form to server
 				$.ajax({
 					url : form.attr('action'),
@@ -158,9 +158,9 @@ function editMember(id = null) {
 			data: {member_id : id},
 			dataType: 'json',
 			success:function(response) {
-				$("#editName").val(response.name);
+				$("#editName").val(response.fname);
 
-				$("#editAddress").val(response.address);
+				$("#editlname").val(response.lname);
 
 				$("#editContact").val(response.contact);
 
@@ -178,7 +178,7 @@ function editMember(id = null) {
 
 					// validation
 					var editName = $("#editName").val();
-					var editAddress = $("#editAddress").val();
+					var editlname = $("#editlname").val();
 					var editContact = $("#editContact").val();
 					var editActive = $("#editActive").val();
 
@@ -190,12 +190,12 @@ function editMember(id = null) {
 						$("#editName").closest('.form-group').addClass('has-success');				
 					}
 
-					if(editAddress == "") {
-						$("#editAddress").closest('.form-group').addClass('has-error');
-						$("#editAddress").after('<p class="text-danger">The Address field is required</p>');
+					if(editlname == "") {
+						$("#editlname").closest('.form-group').addClass('has-error');
+						$("#editlname").after('<p class="text-danger">The Address field is required</p>');
 					} else {
-						$("#editAddress").closest('.form-group').removeClass('has-error');
-						$("#editAddress").closest('.form-group').addClass('has-success');				
+						$("#editlname").closest('.form-group').removeClass('has-error');
+						$("#editlname").closest('.form-group').addClass('has-success');				
 					}
 
 					if(editContact == "") {
@@ -214,7 +214,7 @@ function editMember(id = null) {
 						$("#editActive").closest('.form-group').addClass('has-success');				
 					}
 
-					if(editName && editAddress && editContact && editActive) {
+					if(editName && editlname && editContact && editActive) {
 						$.ajax({
 							url: form.attr('action'),
 							type: form.attr('method'),

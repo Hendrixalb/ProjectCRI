@@ -8,8 +8,8 @@ if($_POST) {
 	$validator = array('success' => false, 'messages' => array());
 
 	$id = $_POST['member_id'];
-	$name = $_POST['editName'];
-	$address = $_POST['editlname'];
+	$fname = $_POST['editName'];
+	$lname = $_POST['editlname'];
 	$contact = $_POST['editContact'];
 	$active = $_POST['editActive'];
 

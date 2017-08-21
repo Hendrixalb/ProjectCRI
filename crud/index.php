@@ -65,7 +65,7 @@
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="lname" class="col-sm-2 control-label">Last</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="lname" name="lname" placeholder="Name">
+			      <input type="text" class="form-control" id="lname" name="lname" placeholder="Last">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
@@ -140,7 +140,7 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="editname" class="col-sm-2 control-label">Last</label>
+			    <label for="editlname" class="col-sm-2 control-label">Last</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" id="editlname" name="editlname" placeholder="Last">
 			    </div>
