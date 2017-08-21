@@ -111,7 +111,7 @@ $(document).ready(function(){
 		},
 		"columnDefs":[
 			{
-				"targets":[9, 8, 9],
+				"targets":[0, 8, 7],
 				"orderable":false,
 			},
 		],
