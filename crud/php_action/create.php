@@ -7,12 +7,12 @@ if($_POST) {
 
 	$validator = array('success' => false, 'messages' => array());
 
-	$name = $_POST['name'];
-	$address = $_POST['address'];
+	$fname = $_POST['fname'];
+	$lname = $_POST['lname'];
 	$contact = $_POST['contact'];
 	$active = $_POST['active'];
 
-	$sql = "INSERT INTO members (name, contact, address, active) VALUES ('$name', '$contact', '$address', '$active')";
+	$sql = "INSERT INTO members (fname, contact, lname, active) VALUES ('$fname', '$contact', '$lname', '$active')";
 	$query = $connect->query($sql);
 
 	if($query === TRUE) {			

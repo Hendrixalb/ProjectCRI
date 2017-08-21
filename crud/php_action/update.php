@@ -9,11 +9,11 @@ if($_POST) {
 
 	$id = $_POST['member_id'];
 	$name = $_POST['editName'];
-	$address = $_POST['editAddress'];
+	$address = $_POST['editlname'];
 	$contact = $_POST['editContact'];
 	$active = $_POST['editActive'];
 
-	$sql = "UPDATE members SET name = '$name', contact = '$contact', address = '$address', active = '$active' WHERE id = $id";
+	$sql = "UPDATE members SET fname = '$fname', contact = '$contact', lname = '$lname', active = '$active' WHERE id = $id";
 	$query = $connect->query($sql);
 
 	if($query === TRUE) {			

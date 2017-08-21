@@ -30,8 +30,8 @@ while ($row = $query->fetch_assoc()) {
 
 	$output['data'][] = array(
 		$x,
-		$row['name'],
-		$row['address'],
+		$row['fname'],
+		$row['lname'],
 		$row['contact'],
 		$active,
 		$actionButton

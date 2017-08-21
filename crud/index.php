@@ -56,16 +56,17 @@
 	      	<div class="messages"></div>
 
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="name" class="col-sm-2 control-label">Name</label>
+			    <label for="fname" class="col-sm-2 control-label">Name</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+			      <input type="text" class="form-control" id="fname" name="fname" placeholder="Name">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
-			  <div class="form-group">
-			    <label for="address" class="col-sm-2 control-label">Address</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="lname" class="col-sm-2 control-label">Last</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="lname" name="lname" placeholder="Name">
+				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -139,9 +140,9 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="editAddress" class="col-sm-2 control-label">Address</label>
+			    <label for="editname" class="col-sm-2 control-label">Last</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="editAddress" name="editAddress" placeholder="Address">
+			      <input type="text" class="form-control" id="editlname" name="editlname" placeholder="Last">
 			    </div>
 			  </div>
 			  <div class="form-group">
