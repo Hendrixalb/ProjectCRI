@@ -30,6 +30,7 @@
 					<thead>
 						<tr>
 							<th width="10%">Carnet</th>
+							<th width="10%">Imagen</th>
 							<th width="10%">Nombre</th>
 							<th width="35%">Apellido</th>
 							<th width="35%">Sexo</th>
@@ -111,7 +112,11 @@ $(document).ready(function(){
 		},
 		"columnDefs":[
 			{
+<<<<<<< HEAD
 				"targets":[0, 8, 7],
+=======
+				"targets":[0, 0, 0],
+>>>>>>> 9eae3a13617954ddd5130a25ce6a87933da7e09b
 				"orderable":false,
 			},
 		],
@@ -146,7 +151,7 @@ $(document).ready(function(){
 				return false;
 			}
 		}	
-		if(Carnet != '' && Nombres != '' )
+		if(Carnet != '' && Nombres != '' && Apellidos != '' && Sexo != '' && Cod_ca != '' && Trb_gra != '' && Fecha_egre != '' && Fecha_grad != '')
 		{
 			$.ajax({
 				url:"insert.php",
@@ -165,7 +170,7 @@ $(document).ready(function(){
 		}
 		else
 		{
-			alert("Both Fields are Required");
+			alert("Ambos campos son requeridos");
 		}
 	});
 	
