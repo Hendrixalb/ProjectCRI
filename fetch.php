@@ -20,7 +20,7 @@ if(isset($_POST["order"]))
 }
 else
 {
-	$query .= 'ORDER BY Carnet DESC ';
+	$query .= 'ORDER BY Carnet ASC ';
 }
 if($_POST["length"] != -1)
 {
@@ -52,8 +52,8 @@ foreach($result as $row)
 	$sub_array[] = $row["Trb_gra"];
 	$sub_array[] = $row["Fecha_egre"];
 	$sub_array[] = $row["Fecha_grad"];
-	$sub_array[] = '<button type="button" name="update" Carnet="'.$row["Carnet"].'" class="btn btn-warning btn-xs update">Update</button>';
-	$sub_array[] = '<button type="button" name="delete" Carnet="'.$row["Carnet"].'" class="btn btn-danger btn-xs delete">Delete</button>';
+	$sub_array[] = '<button type="button" name="update" Carnet="'.$row["Carnet"].'" class="btn btn-warning btn-xs update">Modificar</button>';
+	$sub_array[] = '<button type="button" name="delete" Carnet="'.$row["Carnet"].'" class="btn btn-danger btn-xs delete">Eliminar</button>';
 	$data[] = $sub_array;
 }
 $output = array(

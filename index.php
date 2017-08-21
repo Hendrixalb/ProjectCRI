@@ -30,6 +30,7 @@
 					<thead>
 						<tr>
 							<th width="10%">Carnet</th>
+							<th width="10%">Imagen</th>
 							<th width="10%">Nombre</th>
 							<th width="35%">Apellido</th>
 							<th width="35%">Sexo</th>
@@ -111,7 +112,7 @@ $(document).ready(function(){
 		},
 		"columnDefs":[
 			{
-				"targets":[9, 8, 9],
+				"targets":[0, 0, 0],
 				"orderable":false,
 			},
 		],
