@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 			if(Carnet == "") {
 				$("#Carnet").closest('.form-group').addClass('has-error');
-				$("#Carnet").after('<p class="text-danger">The Carnet field is required</p>');
+				$("#Carnet").after('<p class="text-danger">The Name field is required</p>');
 			} else {
 				$("#Carnet").closest('.form-group').removeClass('has-error');
 				$("#Carnet").closest('.form-group').addClass('has-success');				
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 			if(Nombres == "") {
 				$("#Nombres").closest('.form-group').addClass('has-error');
-				$("#Nombres").after('<p class="text-danger">The Nombres field is required</p>');
+				$("#Nombres").after('<p class="text-danger">The Address field is required</p>');
 			} else {
 				$("#Nombres").closest('.form-group').removeClass('has-error');
 				$("#Nombres").closest('.form-group').addClass('has-success');				
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 			if(Apellidos == "") {
 				$("#Apellidos").closest('.form-group').addClass('has-error');
-				$("#Apellidos").after('<p class="text-danger">The Apellidos field is required</p>');
+				$("#Apellidos").after('<p class="text-danger">The Name field is required</p>');
 			} else {
 				$("#Apellidos").closest('.form-group').removeClass('has-error');
 				$("#Apellidos").closest('.form-group').addClass('has-success');				
@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 			if(Sexo == "") {
 				$("#Sexo").closest('.form-group').addClass('has-error');
-				$("#Sexo").after('<p class="text-danger">The Sexo field is required</p>');
+				$("#Sexo").after('<p class="text-danger">The Address field is required</p>');
 			} else {
 				$("#Sexo").closest('.form-group').removeClass('has-error');
 				$("#Sexo").closest('.form-group').addClass('has-success');				
@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 			if(Cod_ca == "") {
 				$("#Cod_ca").closest('.form-group').addClass('has-error');
-				$("#Cod_ca").after('<p class="text-danger">The Codigo field is required</p>');
+				$("#Cod_ca").after('<p class="text-danger">The Name field is required</p>');
 			} else {
 				$("#Cod_ca").closest('.form-group').removeClass('has-error');
 				$("#Cod_ca").closest('.form-group').addClass('has-success');				
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 			if(Trb_gra == "") {
 				$("#Trb_gra").closest('.form-group').addClass('has-error');
-				$("#Trb_gra").after('<p class="text-danger">The Trabajo de graduacion field is required</p>');
+				$("#Trb_gra").after('<p class="text-danger">The Address field is required</p>');
 			} else {
 				$("#Trb_gra").closest('.form-group').removeClass('has-error');
 				$("#Trb_gra").closest('.form-group').addClass('has-success');				
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
 			if(Fecha_egre == "") {
 				$("#Fecha_egre").closest('.form-group').addClass('has-error');
-				$("#Fecha_egre").after('<p class="text-danger">The Fecha de egreso field is required</p>');
+				$("#Fecha_egre").after('<p class="text-danger">The Name field is required</p>');
 			} else {
 				$("#Fecha_egre").closest('.form-group').removeClass('has-error');
 				$("#Fecha_egre").closest('.form-group').addClass('has-success');				
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
 			if(Fecha_grad == "") {
 				$("#Fecha_grad").closest('.form-group').addClass('has-error');
-				$("#Fecha_grad").after('<p class="text-danger">The Fecha de graduacion field is required</p>');
+				$("#Fecha_grad").after('<p class="text-danger">The Address field is required</p>');
 			} else {
 				$("#Fecha_grad").closest('.form-group').removeClass('has-error');
 				$("#Fecha_grad").closest('.form-group').addClass('has-success');				
@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 			if(active == "") {
 				$("#active").closest('.form-group').addClass('has-error');
-				$("#active").after('<p class="text-danger">The active field is required</p>');
+				$("#active").after('<p class="text-danger">The Active field is required</p>');
 			} else {
 				$("#active").closest('.form-group').removeClass('has-error');
 				$("#active").closest('.form-group').addClass('has-success');				
