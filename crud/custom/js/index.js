@@ -180,7 +180,7 @@ function removeMember(id = null) {
 			});
 		}); // click remove btn
 	} else {
-		alert('Error: Refresh the page again');
+		alert('Error: Refresh the page again 1');
 	}
 }
 
@@ -351,6 +351,6 @@ function editMember(id = null) {
 		}); // /fetch selected member info
 
 	} else {
-		alert("Error : Refresh the page again");
+		alert("Error : Refresh the page again 2");
 	}
 }
