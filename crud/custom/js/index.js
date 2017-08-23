@@ -3,29 +3,9 @@ var manageMemberTable;
 
 $(document).ready(function() {
 	manageMemberTable = $("#manageMemberTable").DataTable({
-	manageMemberTable = $("#manageMemberTable").DataTable({
-		
-
-		 "processing": true,
-         "sAjaxSource":"php_action/retrieve.php",
-		 "dom": 'lBfrtip',
-		 "buttons": [
-            {
-                extend: 'collection',
-                text: 'Export',
-                buttons: [
-                    'copy',
-                    'excel',
-                    'csv',
-                    'pdf',
-                    'print'
-                ]
-            }
-        ]
+		"ajax": "php_action/retrieve.php",
+		"order": []
 	});
-
-
-
 
 	$("#addMemberModalBtn").on('click', function() {
 		// reset the form 
