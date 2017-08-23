@@ -6,7 +6,7 @@ $output = array('success' => false, 'messages' => array());
 
 $memberId = $_POST['member_id'];
 
-$sql = "DELETE FROM members WHERE id = {$memberId}";
+$sql = "DELETE FROM estudiantes WHERE id = {$memberId}";
 $query = $connect->query($sql);
 if($query === TRUE) {
 	$output['success'] = true;

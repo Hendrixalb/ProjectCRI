@@ -24,33 +24,78 @@ $(document).ready(function() {
 			var form = $(this);
 
 			// validation
-			var fname = $("#fname").val();
-			var lname = $("#lname").val();
-			var contact = $("#contact").val();
+			var Carnet = $("#Carnet").val();
+			var Nombres = $("#Nombres").val();
+			var Apellidos = $("#Apellidos").val();
+			var Sexo = $("#Sexo").val();
+			var Cod_ca = $("#Cod_ca").val();
+			var Trb_gra = $("#Trb_gra").val();
+			var Fecha_egre = $("#Fecha_egre").val();
+			var Fecha_grad = $("#Fecha_grad").val();
 			var active = $("#active").val();
 
-			if(fname == "") {
-				$("#fname").closest('.form-group').addClass('has-error');
-				$("#fname").after('<p class="text-danger">The Name field is required</p>');
+			if(Carnet == "") {
+				$("#Carnet").closest('.form-group').addClass('has-error');
+				$("#Carnet").after('<p class="text-danger">The Name field is required</p>');
 			} else {
-				$("#fname").closest('.form-group').removeClass('has-error');
-				$("#fname").closest('.form-group').addClass('has-success');				
+				$("#Carnet").closest('.form-group').removeClass('has-error');
+				$("#Carnet").closest('.form-group').addClass('has-success');				
 			}
 
-			if(lname == "") {
-				$("#lname").closest('.form-group').addClass('has-error');
-				$("#lname").after('<p class="text-danger">The Address field is required</p>');
+			if(Nombres == "") {
+				$("#Nombres").closest('.form-group').addClass('has-error');
+				$("#Nombres").after('<p class="text-danger">The Address field is required</p>');
 			} else {
-				$("#lname").closest('.form-group').removeClass('has-error');
-				$("#lname").closest('.form-group').addClass('has-success');				
+				$("#Nombres").closest('.form-group').removeClass('has-error');
+				$("#Nombres").closest('.form-group').addClass('has-success');				
 			}
 
-			if(contact == "") {
-				$("#contact").closest('.form-group').addClass('has-error');
-				$("#contact").after('<p class="text-danger">The Contact field is required</p>');
+			if(Apellidos == "") {
+				$("#Apellidos").closest('.form-group').addClass('has-error');
+				$("#Apellidos").after('<p class="text-danger">The Name field is required</p>');
 			} else {
-				$("#contact").closest('.form-group').removeClass('has-error');
-				$("#contact").closest('.form-group').addClass('has-success');				
+				$("#Apellidos").closest('.form-group').removeClass('has-error');
+				$("#Apellidos").closest('.form-group').addClass('has-success');				
+			}
+
+			if(Sexo == "") {
+				$("#Sexo").closest('.form-group').addClass('has-error');
+				$("#Sexo").after('<p class="text-danger">The Address field is required</p>');
+			} else {
+				$("#Sexo").closest('.form-group').removeClass('has-error');
+				$("#Sexo").closest('.form-group').addClass('has-success');				
+			}
+
+			if(Cod_ca == "") {
+				$("#Cod_ca").closest('.form-group').addClass('has-error');
+				$("#Cod_ca").after('<p class="text-danger">The Name field is required</p>');
+			} else {
+				$("#Cod_ca").closest('.form-group').removeClass('has-error');
+				$("#Cod_ca").closest('.form-group').addClass('has-success');				
+			}
+
+			if(Trb_gra == "") {
+				$("#Trb_gra").closest('.form-group').addClass('has-error');
+				$("#Trb_gra").after('<p class="text-danger">The Address field is required</p>');
+			} else {
+				$("#Trb_gra").closest('.form-group').removeClass('has-error');
+				$("#Trb_gra").closest('.form-group').addClass('has-success');				
+			}
+
+			if(Fecha_egre == "") {
+				$("#Fecha_egre").closest('.form-group').addClass('has-error');
+				$("#Fecha_egre").after('<p class="text-danger">The Name field is required</p>');
+			} else {
+				$("#Fecha_egre").closest('.form-group').removeClass('has-error');
+				$("#Fecha_egre").closest('.form-group').addClass('has-success');				
+			}
+
+			if(Fecha_grad == "") {
+				$("#Fecha_grad").closest('.form-group').addClass('has-error');
+				$("#Fecha_grad").after('<p class="text-danger">The Address field is required</p>');
+			} else {
+				$("#Fecha_grad").closest('.form-group').removeClass('has-error');
+				$("#Fecha_grad").closest('.form-group').addClass('has-success');				
 			}
 
 			if(active == "") {
@@ -61,7 +106,7 @@ $(document).ready(function() {
 				$("#active").closest('.form-group').addClass('has-success');				
 			}
 
-			if(fname && lname && contact && active) {
+			if(Carnet && Nombres && Apellidos && Sexo && Cod_ca && Trb_gra && Fecha_egre && Fecha_grad && active) {
 				//submi the form to server
 				$.ajax({
 					url : form.attr('action'),
@@ -158,13 +203,23 @@ function editMember(id = null) {
 			data: {member_id : id},
 			dataType: 'json',
 			success:function(response) {
-				$("#editName").val(response.fname);
+				$("#Carnet").val(response.Carnet);
 
-				$("#editlname").val(response.lname);
+				$("#Nombres").val(response.Nombres);
 
-				$("#editContact").val(response.contact);
+				$("#Apellidos").val(response.Apellidos);
 
-				$("#editActive").val(response.active);	
+				$("#Sexo").val(response.Sexo);
+
+				$("#Cod_ca").val(response.Cod_ca);
+
+				$("#Trb_gra").val(response.Trb_gra);
+
+				$("#Fecha_egre").val(response.Fecha_egre);
+
+				$("#Fecha_grad").val(response.Fecha_grad);
+
+				$("#active").val(response.active);	
 
 				// mmeber id 
 				$(".editMemberModal").append('<input type="hidden" name="member_id" id="member_id" value="'+response.id+'"/>');
@@ -177,44 +232,89 @@ function editMember(id = null) {
 					var form = $(this);
 
 					// validation
-					var editName = $("#editName").val();
-					var editlname = $("#editlname").val();
-					var editContact = $("#editContact").val();
-					var editActive = $("#editActive").val();
+					var Carnet = $("#Carnet").val();
+					var Nombres = $("#Nombres").val();
+					var Apellidos = $("#Apellidos").val();
+					var Sexo = $("#Sexo").val();
+					var Cod_ca = $("#Cod_ca").val();
+					var Trb_gra = $("#Trb_gra").val();
+					var Fecha_egre = $("#Fecha_egre").val();
+					var Fecha_grad = $("#Fecha_grad").val();
+					var active = $("#active").val();
 
-					if(editName == "") {
-						$("#editName").closest('.form-group').addClass('has-error');
-						$("#editName").after('<p class="text-danger">The Name field is required</p>');
+					if(Carnet == "") {
+						$("#Carnet").closest('.form-group').addClass('has-error');
+						$("#Carnet").after('<p class="text-danger">The Name field is required</p>');
 					} else {
-						$("#editName").closest('.form-group').removeClass('has-error');
-						$("#editName").closest('.form-group').addClass('has-success');				
+						$("#Carnet").closest('.form-group').removeClass('has-error');
+						$("#Carnet").closest('.form-group').addClass('has-success');				
 					}
 
-					if(editlname == "") {
-						$("#editlname").closest('.form-group').addClass('has-error');
-						$("#editlname").after('<p class="text-danger">The Address field is required</p>');
+					if(Nombres == "") {
+						$("#Nombres").closest('.form-group').addClass('has-error');
+						$("#Nombres").after('<p class="text-danger">The Address field is required</p>');
 					} else {
-						$("#editlname").closest('.form-group').removeClass('has-error');
-						$("#editlname").closest('.form-group').addClass('has-success');				
+						$("#Nombres").closest('.form-group').removeClass('has-error');
+						$("#Nombres").closest('.form-group').addClass('has-success');				
 					}
 
-					if(editContact == "") {
-						$("#editContact").closest('.form-group').addClass('has-error');
-						$("#editContact").after('<p class="text-danger">The Contact field is required</p>');
+					if(Apellidos == "") {
+						$("#Apellidos").closest('.form-group').addClass('has-error');
+						$("#Apellidos").after('<p class="text-danger">The Contact field is required</p>');
 					} else {
-						$("#editContact").closest('.form-group').removeClass('has-error');
-						$("#editContact").closest('.form-group').addClass('has-success');				
+						$("#Apellidos").closest('.form-group').removeClass('has-error');
+						$("#Apellidos").closest('.form-group').addClass('has-success');				
 					}
 
-					if(editActive == "") {
-						$("#editActive").closest('.form-group').addClass('has-error');
-						$("#editActive").after('<p class="text-danger">The Active field is required</p>');
+					if(Sexo == "") {
+						$("#Sexo").closest('.form-group').addClass('has-error');
+						$("#Sexo").after('<p class="text-danger">The Contact field is required</p>');
 					} else {
-						$("#editActive").closest('.form-group').removeClass('has-error');
-						$("#editActive").closest('.form-group').addClass('has-success');				
+						$("#Sexo").closest('.form-group').removeClass('has-error');
+						$("#Sexo").closest('.form-group').addClass('has-success');				
 					}
 
-					if(editName && editlname && editContact && editActive) {
+					if(Cod_ca == "") {
+						$("#Cod_ca").closest('.form-group').addClass('has-error');
+						$("#Cod_ca").after('<p class="text-danger">The Contact field is required</p>');
+					} else {
+						$("#Cod_ca").closest('.form-group').removeClass('has-error');
+						$("#Cod_ca").closest('.form-group').addClass('has-success');				
+					}
+
+					if(Trb_gra == "") {
+						$("#Trb_gra").closest('.form-group').addClass('has-error');
+						$("#Trb_gra").after('<p class="text-danger">The Contact field is required</p>');
+					} else {
+						$("#Trb_gra").closest('.form-group').removeClass('has-error');
+						$("#Trb_gra").closest('.form-group').addClass('has-success');				
+					}
+
+					if(Fecha_egre == "") {
+						$("#Fecha_egre").closest('.form-group').addClass('has-error');
+						$("#Fecha_egre").after('<p class="text-danger">The Contact field is required</p>');
+					} else {
+						$("#Fecha_egre").closest('.form-group').removeClass('has-error');
+						$("#Fecha_egre").closest('.form-group').addClass('has-success');				
+					}
+
+					if(Fecha_grad == "") {
+						$("#Fecha_grad").closest('.form-group').addClass('has-error');
+						$("#Fecha_grad").after('<p class="text-danger">The Contact field is required</p>');
+					} else {
+						$("#Fecha_grad").closest('.form-group').removeClass('has-error');
+						$("#Fecha_grad").closest('.form-group').addClass('has-success');				
+					}
+
+					if(active == "") {
+						$("#active").closest('.form-group').addClass('has-error');
+						$("#active").after('<p class="text-danger">The Active field is required</p>');
+					} else {
+						$("#active").closest('.form-group').removeClass('has-error');
+						$("#active").closest('.form-group').addClass('has-success');				
+					}
+
+					if(Carnet && Nombres && Apellidos && Sexo && Cod_ca && Trb_gra && Fecha_egre && Fecha_grad && active) {
 						$.ajax({
 							url: form.attr('action'),
 							type: form.attr('method'),

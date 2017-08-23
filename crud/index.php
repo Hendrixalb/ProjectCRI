@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CRUD SYSTEM</title>
+	<title>Sistema de control de estudiantes</title>
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
@@ -15,12 +15,12 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<center><h1 class="page-header">CRUD System <small>DataTables</small> </h1> </center>
+				<center><h1 class="page-header">Niña Khalifa System ♥<small> con DataTables</small> </h1> </center>
 
 				<div class="removeMessages"></div>
 
 				<button class="btn btn-default pull pull-right" data-toggle="modal" data-target="#addMember" id="addMemberModalBtn">
-					<span class="glyphicon glyphicon-plus-sign"></span>	Add Member
+					<span class="glyphicon glyphicon-plus-sign"></span>	Nuevo
 				</button>
 
 				<br /> <br /> <br />
@@ -28,12 +28,17 @@
 				<table class="table" id="manageMemberTable">					
 					<thead>
 						<tr>
-							<th>S.no</th>
-							<th>Name</th>													
-							<th>Address</th>
-							<th>Contact</th>								
-							<th>Active</th>
-							<th>Option</th>
+							<th>ID</th>
+							<th>Carnet</th>													
+							<th>Nombres</th>
+							<th>Apellidos</th>
+							<th>Sexo</th>
+							<th>Codigo de carrera</th>
+							<th>Trabajo de graduacion</th>
+							<th>Egreso</th>
+							<th>Graduacion</th>								
+							<th>Activo</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 				</table>
@@ -47,7 +52,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span>	Add Member</h4>
+	        <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span>	Nuevo estudiante</h4>
 	      </div>
 	      
 	      <form class="form-horizontal" action="php_action/create.php" method="POST" id="createMemberForm">
@@ -56,40 +61,78 @@
 	      	<div class="messages"></div>
 
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="fname" class="col-sm-2 control-label">Name</label>
+			    <label for="Carnet" class="col-sm-2 control-label">Carnet</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="fname" name="fname" placeholder="Name">
+			      <input type="text" class="form-control" id="Carnet" name="Carnet" placeholder="Carnet">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="lname" class="col-sm-2 control-label">Last</label>
+			    <label for="Nombres" class="col-sm-2 control-label">Nombres</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="lname" name="lname" placeholder="Last">
+			      <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Nombres">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="contact" class="col-sm-2 control-label">Contact</label>
+			    <label for="Apellidos" class="col-sm-2 control-label">Apellidos</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact">
+			      <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos">
+			    </div>
+			  </div>
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
+			    <div class="col-sm-10"> 
+			      <Select type="text" class="form-control" id="Sexo" name="Sexo" placeholder="Sexo">
+				<!-- here the text will apper  -->
+					<option value="Masculino">Masculino</option>
+					<option value="Femenino">Femenino</option>
+				  </Select>
+			    </div>
+			  </div>
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="Cod_ca" class="col-sm-2 control-label">Codigo de carrera</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="Cod_ca" name="Cod_ca" placeholder="Codigo de carrera">
+				<!-- here the text will apper  -->
+			    </div>
+			  </div>
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="Trb_gra" class="col-sm-2 control-label">Trabajo de graduacion</label>
+			    <div class="col-sm-10"> 
+			      <input type="date" class="form-control" id="Trb_gra" name="Trb_gra" placeholder="Trabajo de graduacion">
+				<!-- here the text will apper  -->
+			    </div>
+			  </div>
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="Fecha_egre" class="col-sm-2 control-label">Egreso</label>
+			    <div class="col-sm-10"> 
+			      <input type="date" class="form-control" id="Fecha_egre" name="Fecha_egre" placeholder="Egreso">
+				<!-- here the text will apper  -->
+			    </div>
+			  </div>
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="Fecha_grad" class="col-sm-2 control-label">Graduacion</label>
+			    <div class="col-sm-10"> 
+			      <input type="date" class="form-control" id="Fecha_grad" name="Fecha_grad" placeholder="Graduacion">
+				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="active" class="col-sm-2 control-label">Active</label>
 			    <div class="col-sm-10">
 			      <select class="form-control" name="active" id="active">
-			      	<option value="">~~SELECT~~</option>
-			      	<option value="1">Activate</option>
-			      	<option value="2">Deactivate</option>
+			      	<option value="">--Selecione una opcion--</option>
+			      	<option value="1">Activo</option>
+			      	<option value="2">Inactivo</option>
 			      </select>
 			    </div>
 			  </div>			 		
 
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-primary">Save changes</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        <button type="submit" class="btn btn-primary">Guardar cambios</button>
 	      </div>
 	      </form> 
 	    </div><!-- /.modal-content -->
@@ -103,14 +146,14 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><span class="glyphicon glyphicon-trash"></span> Remove Member</h4>
+	        <h4 class="modal-title"><span class="glyphicon glyphicon-trash"></span> Eliminar</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Do you really want to remove ?</p>
+	        <p>Realmente deseas eliminar este registro ?</p>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary" id="removeBtn">Save changes</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        <button type="button" class="btn btn-primary" id="removeBtn">Guardar cambios</button>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
@@ -123,7 +166,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span> Edit Member</h4>
+	        <h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span> Editar</h4>
 	      </div>
 
 		<form class="form-horizontal" action="php_action/update.php" method="POST" id="updateMemberForm">	      
@@ -133,38 +176,72 @@
 	        <div class="edit-messages"></div>
 
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="editName" class="col-sm-2 control-label">Name</label>
+			    <label for="Carnet" class="col-sm-2 control-label">Carnet</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="editName" name="editName" placeholder="Name">
+			      <input type="text" class="form-control" id="Carnet" name="Carnet" placeholder="Carnet">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="editlname" class="col-sm-2 control-label">Last</label>
+			    <label for="Nombres" class="col-sm-2 control-label">Nombres</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="editlname" name="editlname" placeholder="Last">
+			      <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Nombres">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="editContact" class="col-sm-2 control-label">Contact</label>
+			    <label for="Apellidos" class="col-sm-2 control-label">Apellidos</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="editContact" name="editContact" placeholder="Contact">
+			      <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos">
+			    </div>
+			  </div>
+			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			    <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
+			    <div class="col-sm-10"> 
+			      <Select type="text" class="form-control" id="Sexo" name="Sexo" placeholder="Sexo">
+				<!-- here the text will apper  -->
+					<option value="Masculino">Masculino</option>
+					<option value="Femenino">Femenino</option>
+				  </Select>
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="editActive" class="col-sm-2 control-label">Active</label>
+			    <label for="Cod_ca" class="col-sm-2 control-label">Codigo de carrera</label>
 			    <div class="col-sm-10">
-			      <select class="form-control" name="editActive" id="editActive">
-			      	<option value="">~~SELECT~~</option>
-			      	<option value="1">Activate</option>
-			      	<option value="2">Deactivate</option>
+			      <input type="text" class="form-control" id="Cod_ca" name="Cod_ca" placeholder="Codigo de carrera">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="Trb_gra" class="col-sm-2 control-label">Trabajo de graduacion</label>
+			    <div class="col-sm-10">
+			      <input type="date" class="form-control" id="Trb_gra" name="Trb_gra" placeholder="Trabajo de graduacion">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="Fecha_egre" class="col-sm-2 control-label">Egreso</label>
+			    <div class="col-sm-10">
+			      <input type="date" class="form-control" id="Fecha_egre" name="Fecha_egre" placeholder="Egreso">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="Fecha_grad" class="col-sm-2 control-label">Graduacion</label>
+			    <div class="col-sm-10">
+			      <input type="date" class="form-control" id="Fecha_grad" name="Fecha_grad" placeholder="Graduacion">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="active" class="col-sm-2 control-label">Activo</label>
+			    <div class="col-sm-10">
+			      <select class="form-control" name="active" id="active">
+			      	<option value="">--Selecione una opcion--</option>
+			      	<option value="1">Activo</option>
+			      	<option value="2">Inactivo</option>
 			      </select>
 			    </div>
 			  </div>	
 	      </div>
 	      <div class="modal-footer editMemberModal">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="submit" class="btn btn-primary">Save changes</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	        <button type="submit" class="btn btn-primary">Guardar cambios</button>
 	      </div>
 	      </form>
 	    </div><!-- /.modal-content -->

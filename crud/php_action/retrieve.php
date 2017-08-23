@@ -4,16 +4,16 @@ require_once 'db_connect.php';
 
 $output = array('data' => array());
 
-$sql = "SELECT * FROM members";
+$sql = "SELECT * FROM estudiantes";
 $query = $connect->query($sql);
 
 $x = 1;
 while ($row = $query->fetch_assoc()) {
 	$active = '';
 	if($row['active'] == 1) {
-		$active = '<label class="label label-success">Active</label>';
+		$active = '<label class="label label-success">Activo</label>';
 	} else {
-		$active = '<label class="label label-danger">Deactive</label>'; 
+		$active = '<label class="label label-danger">Inactivo</label>'; 
 	}
 
 	$actionButton = '
@@ -30,9 +30,14 @@ while ($row = $query->fetch_assoc()) {
 
 	$output['data'][] = array(
 		$x,
-		$row['fname'],
-		$row['lname'],
-		$row['contact'],
+		$row['Carnet'],
+		$row['Nombres'],
+		$row['Apellidos'],
+		$row['Sexo'],
+		$row['Cod_ca'],
+		$row['Trb_gra'],
+		$row['Fecha_egre'],
+		$row['Fecha_grad'],
 		$active,
 		$actionButton
 	);
