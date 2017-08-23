@@ -20,3 +20,5 @@ if($query === TRUE) {
 $connect->close();
 
 echo json_encode($output);
+
+?>

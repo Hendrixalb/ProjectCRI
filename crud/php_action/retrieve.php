@@ -44,3 +44,4 @@ while ($row = $query->fetch_assoc()) {
 $connect->close();
 
 echo json_encode($output);
+?>

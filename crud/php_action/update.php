@@ -30,3 +30,4 @@ if($_POST) {
 	echo json_encode($validator);
 
 }
+?>
