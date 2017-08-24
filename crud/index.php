@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<center><h1 class="page-header">Niña Khalifa System ♥<small> con DataTables</small> </h1> </center>
+				<center><h1 class="page-header">Control de alumnos<small> con DataTables</small> </h1> </center>
 
 				<div class="removeMessages"></div>
 
