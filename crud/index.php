@@ -1,5 +1,8 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
 <head>
 	<title>Sistema de control de estudiantes</title>
 
