@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,17 +30,17 @@
 				<table class="table" id="manageMemberTable">					
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Carnet</th>													
-							<th>Nombres</th>
-							<th>Apellidos</th>
-							<th>Sexo</th>
-							<th>Codigo de carrera</th>
-							<th>Trabajo de graduacion</th>
-							<th>Egreso</th>
-							<th>Graduacion</th>								
-							<th>Activo</th>
-							<th>Acciones</th>
+							<th width="1%">ID</th>
+							<th width="1%">Carnet</th>													
+							<th width="1%">Nombres</th>
+							<th width="1%">Apellidos</th>
+							<th width="1%">Sexo</th>
+							<th width="1%">Codigo de carrera</th>
+							<th width="1%">Trabajo de graduacion</th>
+							<th width="1%">Egreso</th>
+							<th width="1%">Graduacion</th>								
+							<th width="1%">Activo</th>
+							<th width="1%">Acciones</th>
 						</tr>
 					</thead>
 				</table>
