@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-<head>
-	<title>Sistema de control de estudiantes</title>
-
-	<!-- bootstrap css -->
-	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
-	<!-- datatables css -->
-	<link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
-
-</head>
-<body>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-
-				<center><h1 class="page-header">Control de alumnos<small> con DataTables</small> </h1> </center>
->>>>>>> d09541428a67d7c2a4d93754b7f2a78f487d62f0
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -53,7 +29,7 @@
             <form action="validar.php" method="post">
                 <input type="text" name="mail" class="username" placeholder="Username">
                 <input type="password" name="pass" class="password" placeholder="Password">
-                <button type="submit">Iniciar Sesion</button>
+                <button type="submit">Sign me in</button>
                 <div class="error"><span>+</span></div>
             </form>
            
