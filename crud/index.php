@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,17 +15,12 @@
 </head>
 <body>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+	
 
-				<center><h1 class="page-header">Control de alumnos<small> con DataTables</small> </h1> </center>
->>>>>>> d09541428a67d7c2a4d93754b7f2a78f487d62f0
+<center><h1 class="page-header">Control de alumnos<small> con DataTables</small> </h1> </center>
 
-<!DOCTYPE html>
-<html lang="en" class="no-js">
 
-    <head>
+
 
         <meta charset="utf-8">
         <title>Fullscreen Login</title>
@@ -44,10 +39,7 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-    </head>
-
-    <body>
-
+  
         <div class="page-container">
             <h1>Login</h1>
             <form action="validar.php" method="post">
