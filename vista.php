@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -30,7 +29,7 @@
             <form action="validar.php" method="post">
                 <input type="text" name="mail" class="username" placeholder="Username">
                 <input type="password" name="pass" class="password" placeholder="Password">
-                <button type="submit">Iniciar Sesion</button>
+                <button type="submit">Sign me in</button>
                 <div class="error"><span>+</span></div>
             </form>
            
