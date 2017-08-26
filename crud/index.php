@@ -1,26 +1,7 @@
-
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-<head>
-	<title>Sistema de control de estudiantes</title>
+<html lang="en" class="no-js">
 
-	<!-- bootstrap css -->
-	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
-	<!-- datatables css -->
-	<link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
-
-</head>
-<body>
-
-	
-
-
-
-
-
+    <head>
 
         <meta charset="utf-8">
         <title>Login</title>
@@ -39,13 +20,16 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-  
+    </head>
+
+    <body>
+
         <div class="page-container">
             <h1>Login</h1>
             <form action="validar.php" method="post">
                 <input type="text" name="mail" class="username" placeholder="Username">
                 <input type="password" name="pass" class="password" placeholder="Password">
-                <button type="submit">Iniciar Sesion</button>
+                <button type="submit">Sign me in</button>
                 <div class="error"><span>+</span></div>
             </form>
            
@@ -60,4 +44,5 @@
     </body>
 
 </html>
+
 
