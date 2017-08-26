@@ -12,8 +12,10 @@
 
 </head>
 <body>
-
-	<div class="container">
+<?php 
+include('menu1.php'); 
+?>
+	<div class="container box">
 		<div class="row">
 			<div class="col-md-12">
 

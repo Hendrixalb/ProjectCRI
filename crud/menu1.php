@@ -5,40 +5,21 @@
 <title>Documento sin t&iacute;tulo</title>
 </head>
 <body>
-<style>
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #AF2F27;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-</style>
-</head>
-<body>
-
-<ul>
-
-  <li><a class="active" href="#home">UNICAES=CRI</a></li>
-  <li><a href="#news">Registro de Usuarios </a></li>
-  <li><a href="#contact">Acerca de </a></li>
-  <li><a href="#about">Cerrar </a></li>
-</ul>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Unicaes-CRI</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Inicio</a></li>
+      <li><a href="#">Registro de Usuarios</a></li>
+      <li><a href="#"></a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</a></li>
+    </ul>
+  </div>
+</nav>
 </body>
 </html>
