@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if (@!$_SESSION['user']) {
+	header("Location:index.php");
+}
+?>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
