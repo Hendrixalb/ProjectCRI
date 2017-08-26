@@ -15,7 +15,7 @@
 <?php 
 include('menu1.php'); 
 ?>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 			<div class="col-md-2">
@@ -43,13 +43,13 @@ include('menu1.php');
 				<table class="table" id="manageMemberTable">					
 					<thead>
 						<tr>
-							<th width="1%">ID</th>
+							<th width="0.5%">ID</th>
 							<th width="1%">Carnet</th>													
 							<th width="1%">Nombres</th>
 							<th width="1%">Apellidos</th>
 							<th width="1%">Sexo</th>
-							<th width="1%">Codigo de carrera</th>
-							<th width="1%">Trabajo de graduacion</th>
+							<th width="1%">Cod-Car</th>
+							<th width="1%">Trb-Gra</th>
 							<th width="1%">Egreso</th>
 							<th width="1%">Graduacion</th>								
 							<th width="1%">Activo</th>
