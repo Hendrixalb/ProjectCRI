@@ -17,7 +17,7 @@
 
 	
 
-<center><h1 class="page-header">Control de alumnos<small> con DataTables</small> </h1> </center>
+
 
 
 
