@@ -14,7 +14,7 @@ $(document).ready(function() {
                 buttons: [
                     'copy',
                     'excel',
-                    'csv',
+                   
                     'pdf',
                     'print'
                 ]
