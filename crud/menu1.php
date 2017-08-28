@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Documento sin t&iacute;tulo</title>
+<title>Administracion</title>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -16,7 +16,7 @@
       <li><a href="#"></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    
+      <li><a href="">Bienvenido <strong><?php echo $_SESSION['user'];?></strong></a></li>
       <li><a href="desconectar.php"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</a></li>
     </ul>
   </div>
