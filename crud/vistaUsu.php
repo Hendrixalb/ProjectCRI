@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if (@!$_SESSION['user']) {
+	header("Location:index.php");
+}
+?>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 <head>
-	<title>Sistema de control de estudiantes</title>
+	<title>Control de Usuarios</title>
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
@@ -19,28 +25,25 @@ include('menu1.php');
 		<div class="row">
 			<div class="col-md-12">
 
-				<center><h1 class="page-header">Niña Khalifa System ♥<small> con DataTables</small> </h1> </center>
+				<center><h1 class="page-header">Control de usuarios<small> con DataTables</small> </h1> </center>
 
 				<div class="removeMessages"></div>
 
-				<button class="btn btn-default pull pull-right" data-toggle="modal" data-target="#addMember" id="addMemberModalBtn">
+				<button class="btn btn-default pull pull-right" data-toggle="modal" data-target="#addUsu" id="addUsuModalBtn">
 					<span class="glyphicon glyphicon-plus-sign"></span>	Nuevo
 				</button>
 
 				<br /> <br /> <br />
 
-				<table class="table" id="manageMemberTable">					
+				<table class="table" id="manageUsuTable">					
 					<thead>
 						<tr>
 							<th width="1%">ID</th>
-							<th width="1%">Carnet</th>													
-							<th width="1%">Nombres</th>
-							<th width="1%">Apellidos</th>
-							<th width="1%">Sexo</th>
-							<th width="1%">Codigo de carrera</th>
-							<th width="1%">Trabajo de graduacion</th>
-							<th width="1%">Egreso</th>
-							<th width="1%">Graduacion</th>								
+							<th width="1%">User</th>													
+							<th width="1%">Email</th>
+							<th width="1%">Password</th>
+							<th width="1%">Pasadmin</th>
+							<th width="1%">rol</th>								
 							<th width="1%">Activo</th>
 							<th width="1%">Acciones</th>
 						</tr>
@@ -51,7 +54,7 @@ include('menu1.php');
 	</div>
 
 	<!-- add modal -->
-	<div class="modal fade" tabindex="-1" role="dialog" id="addMember">
+	<div class="modal fade" tabindex="-1" role="dialog" id="addUsu">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -59,66 +62,41 @@ include('menu1.php');
 	        <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span>	Nuevo estudiante</h4>
 	      </div>
 	      
-	      <form class="form-horizontal" action="php_action/create.php" method="POST" id="createMemberForm">
+	      <form class="form-horizontal" action="php_action/createUsu.php" method="POST" id="createUsuForm">
 
 	      <div class="modal-body">
 	      	<div class="messages"></div>
 
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Carnet" class="col-sm-2 control-label">Carnet</label>
+			    <label for="user" class="col-sm-2 control-label">user</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="Carnet" name="Carnet" placeholder="Carnet">
+			      <input type="text" class="form-control" id="user" name="user" placeholder="user">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Nombres" class="col-sm-2 control-label">Nombres</label>
+			    <label for="email" class="col-sm-2 control-label">email</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Nombres">
+			      <input type="mail" class="form-control" id="email" name="email" placeholder="email">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="Apellidos" class="col-sm-2 control-label">Apellidos</label>
+			    <label for="password" class="col-sm-2 control-label">password</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos">
+			      <input type="text" class="form-control" id="password" name="password" placeholder="password">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="pasadmin" class="col-sm-2 control-label">pasadmin</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="pasadmin" name="pasadmin" placeholder="pasadmin">
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
+			    <label for="rol" class="col-sm-2 control-label">rol</label>
 			    <div class="col-sm-10"> 
-			      <Select type="text" class="form-control" id="Sexo" name="Sexo" placeholder="Sexo">
-				<!-- here the text will apper  -->
-					<option value="Masculino">Masculino</option>
-					<option value="Femenino">Femenino</option>
-				  </Select>
-			    </div>
-			  </div>
-			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Cod_ca" class="col-sm-2 control-label">Codigo de carrera</label>
-			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="Cod_ca" name="Cod_ca" placeholder="Codigo de carrera">
-				<!-- here the text will apper  -->
-			    </div>
-			  </div>
-			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Trb_gra" class="col-sm-2 control-label">Trabajo de graduacion</label>
-			    <div class="col-sm-10"> 
-			      <input type="date" class="form-control" id="Trb_gra" name="Trb_gra" placeholder="Trabajo de graduacion">
-				<!-- here the text will apper  -->
-			    </div>
-			  </div>
-			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Fecha_egre" class="col-sm-2 control-label">Egreso</label>
-			    <div class="col-sm-10"> 
-			      <input type="date" class="form-control" id="Fecha_egre" name="Fecha_egre" placeholder="Egreso">
-				<!-- here the text will apper  -->
-			    </div>
-			  </div>
-			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Fecha_grad" class="col-sm-2 control-label">Graduacion</label>
-			    <div class="col-sm-10"> 
-			      <input type="date" class="form-control" id="Fecha_grad" name="Fecha_grad" placeholder="Graduacion">
+			      <input type="text" class="form-control" id="rol" name="rol" placeholder="rol">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
@@ -145,7 +123,7 @@ include('menu1.php');
 	<!-- /add modal -->
 
 	<!-- remove modal -->
-	<div class="modal fade" tabindex="-1" role="dialog" id="removeMemberModal">
+	<div class="modal fade" tabindex="-1" role="dialog" id="removeUsuModal">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -165,7 +143,7 @@ include('menu1.php');
 	<!-- /remove modal -->
 
 	<!-- edit modal -->
-	<div class="modal fade" tabindex="-1" role="dialog" id="editMemberModal">
+	<div class="modal fade" tabindex="-1" role="dialog" id="editUsuModal">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -173,63 +151,41 @@ include('menu1.php');
 	        <h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span> Editar</h4>
 	      </div>
 
-		<form class="form-horizontal" action="php_action/update.php" method="POST" id="updateMemberForm">	      
+		<form class="form-horizontal" action="php_action/updateUsu.php" method="POST" id="updateUsuForm">	      
 
 	      <div class="modal-body">
 	        	
 	        <div class="edit-messages"></div>
 
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="EditCarnet" class="col-sm-2 control-label">Carnet</label>
+			    <label for="Edituser" class="col-sm-2 control-label">user</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="EditCarnet" name="EditCarnet" placeholder="Carnet">
+			      <input type="text" class="form-control" id="Edituser" name="Edituser" placeholder="user">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="EditNombres" class="col-sm-2 control-label">Nombres</label>
+			    <label for="Editemail" class="col-sm-2 control-label">email</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="EditNombres" name="EditNombres" placeholder="Nombres">
+			      <input type="mail" class="form-control" id="Editemail" name="Editemail" placeholder="email">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="EditApellidos" class="col-sm-2 control-label">Apellidos</label>
+			    <label for="Editpassword" class="col-sm-2 control-label">password</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="EditApellidos" name="EditApellidos" placeholder="Apellidos">
-			    </div>
-			  </div>
-			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="EditSexo" class="col-sm-2 control-label">Sexo</label>
-			    <div class="col-sm-10"> 
-			      <Select type="text" class="form-control" id="EditSexo" name="EditSexo" placeholder="Sexo">
-				<!-- here the text will apper  -->
-					<option value="Masculino">Masculino</option>
-					<option value="Femenino">Femenino</option>
-				  </Select>
+			      <input type="text" class="form-control" id="Editpassword" name="Editpassword" placeholder="password">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="EditCod_ca" class="col-sm-2 control-label">Codigo de carrera</label>
+			    <label for="Editpasadmin" class="col-sm-2 control-label">pasadmin</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="EditCod_ca" name="EditCod_ca" placeholder="Codigo de carrera">
+			      <input type="text" class="form-control" id="Editpasadmin" name="Editpasadmin" placeholder="pasadmin">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="EditTrb_gra" class="col-sm-2 control-label">Trabajo de graduacion</label>
+			    <label for="Editrol" class="col-sm-2 control-label">rol</label>
 			    <div class="col-sm-10">
-			      <input type="date" class="form-control" id="EditTrb_gra" name="EditTrb_gra" placeholder="Trabajo de graduacion">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="EditFecha_egre" class="col-sm-2 control-label">Egreso</label>
-			    <div class="col-sm-10">
-			      <input type="date" class="form-control" id="EditFecha_egre" name="EditFecha_egre" placeholder="Egreso">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="EditFecha_grad" class="col-sm-2 control-label">Graduacion</label>
-			    <div class="col-sm-10">
-			      <input type="date" class="form-control" id="EditFecha_grad" name="EditFecha_grad" placeholder="Graduacion">
+			      <input type="text" class="form-control" id="Editrol" name="Editrol" placeholder="rol">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -243,7 +199,7 @@ include('menu1.php');
 			    </div>
 			  </div>	
 	      </div>
-	      <div class="modal-footer editMemberModal">
+	      <div class="modal-footer editUsuModal">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 	        <button type="submit" class="btn btn-primary">Guardar cambios</button>
 	      </div>
