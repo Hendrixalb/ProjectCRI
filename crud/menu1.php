@@ -12,7 +12,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Inicio</a></li>
-      <li><a href="#">Registro de Usuarios</a></li>
+      <li><a href="vistaUsu.php">Registro de Usuarios</a></li>
       <li><a href="#"></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
