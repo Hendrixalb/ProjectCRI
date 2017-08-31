@@ -93,11 +93,14 @@ include('menu1.php');
 			      <input type="text" class="form-control" id="pasadmin" name="pasadmin" placeholder="pasadmin">
 			    </div>
 			  </div>
-			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
+			  <div class="form-group">
 			    <label for="rol" class="col-sm-2 control-label">rol</label>
-			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="rol" name="rol" placeholder="rol">
-				<!-- here the text will apper  -->
+			    <div class="col-sm-10">
+			      <select class="form-control" name="rol" id="rol">
+			      	<option value="">--Selecione una opcion--</option>
+			      	<option value="Usuario">Usuario</option>
+			      	<option value="Administrador">Administrador</option>
+			      </select>
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -185,7 +188,11 @@ include('menu1.php');
 			  <div class="form-group">
 			    <label for="Editrol" class="col-sm-2 control-label">rol</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="Editrol" name="Editrol" placeholder="rol">
+			      <select class="form-control" name="Editrol" id="Editrol">
+			      	<option value="">--Selecione una opcion--</option>
+			      	<option value="Usuario">Usuario</option>
+			      	<option value="Administrador">Administrador</option>
+			      </select>
 			    </div>
 			  </div>
 			  <div class="form-group">
