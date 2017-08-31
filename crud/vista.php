@@ -24,11 +24,11 @@ include('menu1.php');
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-			<div class="col-md-2">
+			<div class="col-md-1">
 				<img width="100px" src="img/logou.png">
 			</div>
 
-			<div class="col-md-10">
+			<div class="col-md-11">
 				<center><h1 class="page-header">Sistema de Egresos de Alumnos <small> UNICAES-CRI</small> </h1> </center>
 			</div>
 <div class="col-md-12">
@@ -46,7 +46,7 @@ include('menu1.php');
 
 				<br /> <br /> <br />
 
-				<table class="table" id="manageMemberTable">					
+				<table class="table table-striped" id="manageMemberTable">					
 					<thead>
 						<tr>
 							<th width="0.5%">ID</th>

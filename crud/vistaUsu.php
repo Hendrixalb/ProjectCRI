@@ -35,15 +35,15 @@ include('menu1.php');
 
 				<br /> <br /> <br />
 
-				<table class="table" id="manageUsuTable">					
+				<table class="table table-striped" id="manageUsuTable">					
 					<thead>
 						<tr>
-							<th width="1%">ID</th>
+							<th width="1%">Id</th>
 							<th width="1%">User</th>													
 							<th width="1%">Email</th>
 							<th width="1%">Password</th>
 							<th width="1%">Pasadmin</th>
-							<th width="1%">rol</th>								
+							<th width="1%">Rol</th>								
 							<th width="1%">Activo</th>
 							<th width="1%">Acciones</th>
 						</tr>
