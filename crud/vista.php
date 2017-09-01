@@ -46,7 +46,7 @@ include('menu1.php');
 
 				<br /> <br /> <br />
 
-				<table class="table table-striped" id="manageMemberTable">					
+				<table class="table table-hover" id="manageMemberTable">					
 					<thead>
 						<tr>
 							<th width="0.5%">ID</th>
