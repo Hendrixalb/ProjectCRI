@@ -13,12 +13,12 @@ if (@!$_SESSION['user']) {
 
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
   </head>
 <body>
-<div class="container">
+
 <header class="header">
+<div class="container">
 <div class="row">
 
 </div>
@@ -40,13 +40,6 @@ include ("menu1.php");
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
 		<h2> Administración de usuarios registrados</h2>	
-		<div class="well well-small">
-		<hr class="soft"/>
-		<h4>Tabla de Usuarios</h4>
-		<div class="row-fluid">
-		
-
-
 
 			<?php
 
@@ -55,8 +48,7 @@ include ("menu1.php");
 	
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
 				$query=mysqli_query($mysqli,$sql);
-
-				echo "<table border='1'; class='table table-hover';>";
+				echo "<table ; class='table table-hover';>";
 					echo "<tr class='warning'>";
 						echo "<td>Id</td>";
 						echo "<td>User</td>";
@@ -64,7 +56,7 @@ include ("menu1.php");
 						echo "<td>Password</td>";
 						echo "<td>Pasadmin</td>";
 						echo "<td>Rol</td>";
-						echo "<td>Activo</td>";
+						echo "<td>Estado</td>";
 						echo "<td>Editar</td>";
 						echo "<td>Borrar</td>";
 					echo "</tr>";
@@ -84,8 +76,8 @@ include ("menu1.php");
 				    	echo "<td>$arreglo[6]</td>";
 				    	
 
-				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='images/actualizar.gif' class='img-rounded'></td>";
-						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><img src='images/eliminar.png' class='img-rounded'/></a></td>";
+				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><button>Actualizar</button>";
+						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><button>Eliminar</button>";
 						
 
 						
@@ -103,33 +95,8 @@ include ("menu1.php");
 						//header('Location: proyectos.php');
 						echo "<script>location.href='admin.php'</script>";
 					}
-
 			?>
-		</div>	
-		<br/>
 		
-
-
-		<!--EMPIEZA DESLIZABLE-->
-		
-		 <!--TERMINA DESLIZABLE-->
-
-
-
-		
-		
-		</div>
-
-		
-
-
-		
-
-<!--///////////////////////////////////////////////////Termina cuerpo del documento interno////////////////////////////////////////////-->
-</div>
-
-	</div>
-</div>
 <!-- Footer
       ================================================== -->
 
