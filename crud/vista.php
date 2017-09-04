@@ -84,27 +84,27 @@ include('menu1.php');
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="Carnet" class="col-sm-2 control-label">Carnet</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="Carnet" name="Carnet" placeholder="Carnet">
+			      <input type="text" class="form-control" id="Carnet" name="Carnet" required placeholder="Carnet">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="Nombres" class="col-sm-2 control-label">Nombres</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Nombres">
+			      <input type="text" class="form-control" id="Nombres" name="Nombres" required placeholder="Nombres">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="Apellidos" class="col-sm-2 control-label">Apellidos</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos">
+			      <input type="text" class="form-control" id="Apellidos" name="Apellidos" required placeholder="Apellidos">
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="Sexo" class="col-sm-2 control-label">Sexo</label>
 			    <div class="col-sm-10"> 
-			      <Select type="text" class="form-control" id="Sexo" name="Sexo" placeholder="Sexo">
+			      <Select type="text" class="form-control" id="Sexo" name="Sexo" required placeholder="Sexo">
 				<!-- here the text will apper  -->
 					<option value="Masculino">Masculino</option>
 					<option value="Femenino">Femenino</option>
@@ -114,14 +114,14 @@ include('menu1.php');
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="Cod_ca" class="col-sm-2 control-label">Codigo de carrera</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="Cod_ca" name="Cod_ca" placeholder="Codigo de carrera">
+			      <input type="text" class="form-control" id="Cod_ca" name="Cod_ca" required placeholder="Codigo de carrera">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="Trb_gra" class="col-sm-2 control-label">Trabajo de graduacion</label>
 			    <div class="col-sm-10"> 
-			      <input type="date" class="form-control" id="Trb_gra" name="Trb_gra" placeholder="Trabajo de graduacion">
+			      <input type="date" class="form-control" id="Trb_gra" name="Trb_gra"  placeholder="Trabajo de graduacion">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
@@ -142,7 +142,7 @@ include('menu1.php');
 			  <div class="form-group">
 			    <label for="active" class="col-sm-2 control-label">Active</label>
 			    <div class="col-sm-10">
-			      <select class="form-control" name="active" id="active">
+			      <select class="form-control" name="active" required id="active">
 			      	<option value="">--Selecione una opcion--</option>
 			      	<option value="1">Activo</option>
 			      	<option value="2">Inactivo</option>
@@ -199,26 +199,26 @@ include('menu1.php');
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="EditCarnet" class="col-sm-2 control-label">Carnet</label>
 			    <div class="col-sm-10"> 
-			      <input type="text" class="form-control" id="EditCarnet" name="EditCarnet" placeholder="Carnet">
+			      <input type="text" class="form-control" id="EditCarnet" name="EditCarnet" required placeholder="Carnet">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="EditNombres" class="col-sm-2 control-label">Nombres</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="EditNombres" name="EditNombres" placeholder="Nombres">
+			      <input type="text" class="form-control" id="EditNombres" name="EditNombres" required placeholder="Nombres">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="EditApellidos" class="col-sm-2 control-label">Apellidos</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="EditApellidos" name="EditApellidos" placeholder="Apellidos">
+			      <input type="text" class="form-control" id="EditApellidos" name="EditApellidos" required placeholder="Apellidos">
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
 			    <label for="EditSexo" class="col-sm-2 control-label">Sexo</label>
 			    <div class="col-sm-10"> 
-			      <Select type="text" class="form-control" id="EditSexo" name="EditSexo" placeholder="Sexo">
+			      <Select type="text" class="form-control" id="EditSexo" name="EditSexo" required placeholder="Sexo">
 				<!-- here the text will apper  -->
 					<option value="Masculino">Masculino</option>
 					<option value="Femenino">Femenino</option>
@@ -228,7 +228,7 @@ include('menu1.php');
 			  <div class="form-group">
 			    <label for="EditCod_ca" class="col-sm-2 control-label">Codigo de carrera</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="EditCod_ca" name="EditCod_ca" placeholder="Codigo de carrera">
+			      <input type="text" class="form-control" id="EditCod_ca" name="EditCod_ca" required placeholder="Codigo de carrera">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -252,7 +252,7 @@ include('menu1.php');
 			  <div class="form-group">
 			    <label for="Editactive" class="col-sm-2 control-label">Activo</label>
 			    <div class="col-sm-10">
-			      <select class="form-control" name="Editactive" id="Editactive">
+			      <select class="form-control" name="Editactive" required id="Editactive">
 			      	<option value="">--Selecione una opcion--</option>
 			      	<option value="1">Activo</option>
 			      	<option value="2">Inactivo</option>
