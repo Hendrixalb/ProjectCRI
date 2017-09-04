@@ -44,8 +44,13 @@ include ("menu1.php");
 
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
-		<h2> Administración de usuarios registrados</h2>	
-
+		<h2> Administración de usuarios registrados</h2>
+		<div class="col-md-offset-10">
+		<form method="get" action="usuarionuevo.php">
+<button class='btn btn-success' type="submit"> Nuevo Usuario <span class="glyphicon glyphicon-plus"></span>
+</button>
+</form>	
+</div> <br>
 			<?php
 
 				require("connect_db.php");
@@ -81,8 +86,8 @@ include ("menu1.php");
 				    	echo "<td>$arreglo[6]</td>";
 				    	
 
-				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><button>Actualizar</button>";
-						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><button>Eliminar</button>";
+				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><button class='btn btn-info' >Actualizar <span class='glyphicon glyphicon-pencil'> </span></button>";
+						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'>Eliminar <span class='glyphicon glyphicon-trash'> </span></button>";
 						
 
 						
