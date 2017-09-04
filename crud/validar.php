@@ -8,7 +8,7 @@
 session_start();
 	require("connect_db.php");
 
-	$username=$_POST['mail'];
+	$username=$_POST['email'];
 	$pass=$_POST['pass'];
 
 
