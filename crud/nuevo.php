@@ -16,14 +16,15 @@
 				
 				//require("connect_db.php");
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
-				mysqli_query($mysqli,"INSERT INTO login VALUES('','$user','$password','$email','','2')");
+				mysqli_query($mysqli,"INSERT INTO login VALUES('','$user', '$email', '$password','','2')");
 				//echo 'Se ha registrado con exito';
-				echo ' <script language="javascript">alert("Usuario registrado con Ã©xito");</script> ';
+				echo ' <script language="javascript">alert("Usuario registrado con exito");</script> ';
+				echo "<script>location.href='admin.php'</script>";
 				
 			}
 			
 		}else{
-			echo 'Las contraseÃ±as son incorrectas';
+			echo 'Las contraseñas son incorrectas';
 		}
 
 	

@@ -23,7 +23,7 @@ include("menu1.php");
 <!-- formulario registro -->
 <div class="container">
 	<div class="col-md-offset-3">
-<form method="post" action="nuevo.php" >
+<form method="post" action="" >
 <div class="col-md-8">
    <h1>Registro de Usuarios</h1>
     <div class="form-group">
@@ -40,7 +40,7 @@ include("menu1.php");
     </div>
     <div class="form-group">
       <label><b>Repite tu contraseña</b></label>
-      <input type="password" name="rpass" class="form-control" required placeholder="repite contraseña" />
+      <input type="password" name="rpass" class="form-control" required placeholder="Repite contraseña" />
       <br>
        <input  class="btn btn-success" type="submit" name="submit" value="Registrarse"/>
     </div>  
