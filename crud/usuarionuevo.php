@@ -2,58 +2,57 @@
 <?php
 session_start();
 if (@!$_SESSION['user']) {
-	header("Location:index.php");
+  header("Location:index.php");
 }
-?>		
+?>    
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Proyecto Academias</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<!-- bootstrap css -->
-	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
-	<!-- datatables css -->
-	<link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
-</head>
+    <title>Administracion de Usuarios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
+  <!-- datatables css -->
+  <link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
+
+
+  </head>
 <body>
-
-<?php 
+  
+  <?php 
 include("menu1.php");
- ?>	
-<!-- formulario registro -->
-<div class="container">
-	<div class="col-md-offset-3">
-<form method="post" action="nuevo.php" >
+   ?>
+
+    <h2> Administración de usuarios registrados</h2>  
+
+    
+<div class="col-md-offset-3">
+    <form action="nuevo.php" method="post">
 <div class="col-md-8">
-   <h1>Registro de Usuarios</h1>
-    <div class="form-group">
-      <label><b>Ingresa tu nombre</b></label>
-      <input type="text" name="user" class="form-control" placeholder="Ingresa tu nombre" />
-    </div>
-    <div class="form-group">
-      <label><b>Ingresa tu email</b></label>
-      <input type="email" name="email" class="form-control"  required placeholder="Ingresa email"/>
-    </div>
-    <div class="form-group">
-      <label><b>Ingresa tu Password</b></label>
-      <input type="password" name="password" class="form-control"  placeholder="Ingresa contraseña" />
-    </div>
-    <div class="form-group">
-      <label><b>Repite tu contraseña</b></label>
-      <input type="password" name="rpass" class="form-control" required placeholder="repite contraseña" />
-      <br>
-       <input  class="btn btn-success" type="submit" name="submit" value="Registrarse"/>
-    </div>  
-    </div>
-   
-<?php
-		if(isset($_POST['submit'])){
-			require("nuevo.php");
-		}
-	?>
-</form>
-</div>
+
+        Usuario<br> <input type="text" name="user" required  class="form-control"><br>
+        Correo usuario<br> <input type="email" name="email" required class="form-control"><br>
+        Contraseña usuario<br> <input type="text" name="password"  class="form-control"><br>
+        Repite la contraseña<br> <input type="text" name="rpass"  class="form-control"><br>
+        Rol
+        <select name="rol" id="rol" required class="form-control">
+          <option value="Usuario">Usuario</option>
+          <option value="Administrador">Administrador</option>
+        </select> <br>
+
+    
+        <input type="submit" value="Guardar" class="btn btn-success btn-primary">
+        </div>
+      </form>
 </div>
 
-</body>
+    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  
+  </body>
 </html>
+
+
+
