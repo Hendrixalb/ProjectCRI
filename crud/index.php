@@ -27,8 +27,8 @@
         <div class="page-container">
             <h1>Login</h1>
             <form action="validar.php" method="post">
-                <input type="text" name="mail" class="username" placeholder="Username">
-                <input type="password" name="pass" class="password" placeholder="Password">
+                <input type="text" name="email" class="username" required placeholder="Username">
+                <input type="password" name="pass" class="password" required placeholder="Password">
                 <button type="submit">Sign me in</button>
                 <div class="error"><span>+</span></div>
             </form>
