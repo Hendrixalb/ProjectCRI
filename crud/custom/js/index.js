@@ -7,20 +7,44 @@ $(document).ready(function() {
 		 "processing": true,
          "sAjaxSource":"php_action/retrieve.php",
 		 "dom": 'lBfrtip',
-		 "buttons": [
+		 "buttons": 
+		 [
+
+		  {
+                extend: 'print',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+
             {
-                extend: 'collection',
-                text: 'Export',
-                buttons: [
-                    'copy',
-                    'excel',
-                   
-                    'pdf',
-                    'print'
-                ]
-            }
-        ]
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 5 ]
+                }
+
+            },
+
+            'colvis'
+        ]            
+
+
 	});
+	
 
 	$("#addMemberModalBtn").on('click', function() {
 		// reset the form 

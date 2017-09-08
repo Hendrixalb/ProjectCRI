@@ -279,12 +279,21 @@ include('menu1.php');
 	<!-- include custom index.js -->
 	<script type="text/javascript" src="custom/js/index.js"></script>
 	
-<link rel="stylesheet" href="Https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js" />
+
+<script type="text/javascript" src="custom/js/buttons.colVis.min.js"></script>
+
+
 		
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
- 
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css
+"/>
+
 <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
 
-
+   <script src="custom/js/buttons.dataTables.min.css"></script>
+   <link rel="stylesheet" type="text/css" href="custom/js/buttons.dataTables.min.css">
+   <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
+    <script src="custom/js/jquery.dataTables.min.css"></script>
 </body>
 </html>
