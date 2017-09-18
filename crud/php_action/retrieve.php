@@ -7,7 +7,7 @@ $output = array('data' => array());
 $sql = "SELECT * FROM estudiantes";
 $query = $connect->query($sql);
 
-$x = 1;
+$id = 1;
 while ($row = $query->fetch_assoc()) {
 	$active = '';
 	if($row['active'] == 1) {
@@ -29,7 +29,7 @@ while ($row = $query->fetch_assoc()) {
 		';
 
 	$output['data'][] = array(
-		$x,
+		$row['id'],
 		$row['Carnet'],
 		$row['Nombres'],
 		$row['Apellidos'],
@@ -42,7 +42,7 @@ while ($row = $query->fetch_assoc()) {
 		$actionButton
 	);
 
-	$x++;
+	$id++;
 }
 
 // database connection close

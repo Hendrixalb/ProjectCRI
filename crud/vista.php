@@ -49,13 +49,13 @@ include('menu1.php');
 				<table class="table table-hover" id="manageMemberTable">					
 					<thead>
 						<tr>
-							<th width="0.5%">ID</th>
+							<th width="1%">ID</th>
 							<th width="1%">Carnet</th>													
 							<th width="1%">Nombres</th>
 							<th width="1%">Apellidos</th>
 							<th width="1%">Sexo</th>
-							<th width="1%">Cod-Car</th>
-							<th width="1%">Trb-Gra</th>
+							<th width="1%">Codigo de Carrera</th>
+							<th width="1%">Trabajo de Graduacion</th>
 							<th width="1%">Egreso</th>
 							<th width="1%">Graduacion</th>								
 							<th width="1%">Activo</th>
@@ -295,5 +295,6 @@ include('menu1.php');
    <link rel="stylesheet" type="text/css" href="custom/js/buttons.dataTables.min.css">
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
+    <script src="custom/js/vfs_fonts.js"></script>
 </body>
 </html>

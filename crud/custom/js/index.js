@@ -33,8 +33,11 @@ $(document).ready(function() {
 
             {
                 extend: 'pdfHtml5',
+                pageZise: 'Letter',
+                orientation: 'landscape',                
                 exportOptions: {
-                    columns: [ 0, 1, 2, 5 ]
+                    columns: ':visible' 
+                                     
                 }
 
             },
@@ -222,9 +225,11 @@ function removeMember(id = null) {
 			});
 		}); // click remove btn
 	} else {
-		alert('Error: Refresh the page again 1');
+		alert('Error: Refresh the page again');
 	}
 }
+
+
 
 function editMember(id = null) {
 	if(id) {
