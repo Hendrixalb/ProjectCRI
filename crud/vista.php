@@ -33,15 +33,26 @@ include('menu1.php');
 				<center><strong><label class="titulo">IMPORTAR REGISTROS DESDE ARCHIVO .CSV</label></strong></center>
     <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
     	<?php 
     	if (isset($_POST["enviar"])){
     		require_once("connect_db.php");
     		
+=======
+    	<?php 
+    	if (isset($_POST["enviar"])){
+    		require_once("connect_db.php");
+    		require_once("subir_archivo.php");
+>>>>>>> parent of 6eec612... importacion a medias
     		require_once("function.php");
 
     		$archivo = $_FILES["archivo"]["name"];
     		$archivo_copiado = ($_FILES["archivo"]["tmp_name"]);
+<<<<<<< HEAD
     		$archivo_guardado = "Upload/".$archivo;
+=======
+    		$archivo_guardado = "copia_".$archivo;
+>>>>>>> parent of 6eec612... importacion a medias
 
     		if (copy($archivo_copiado, $archivo_guardado)) {
     			echo "Se copio correctamente el archivo temporal a la carpeta de trabajo <br/>";
@@ -52,10 +63,17 @@ include('menu1.php');
     		if (file_exists($archivo_guardado)) {
     			$fp = fopen($archivo_guardado, "r");
     			$rows = 0;
+<<<<<<< HEAD
     			while ($datos = fgetcsv($fp, 10000, ";")) {
     				$rows ++;
     				if ($rows > 1) {
     					$resultado = insertar($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9],$datos[10]);
+=======
+    			while ($datos = fgetcsv($fp, 100000000000000, ";")) {
+    				$rows ++;
+    				if ($rows > 1) {
+    					$resultado = insertar($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
+>>>>>>> parent of 6eec612... importacion a medias
     					if ($resultado) {
     						echo "Se insertaron correctamente los datos <br/>";
     					}else{
@@ -68,23 +86,26 @@ include('menu1.php');
     		}
     	}
     	 ?>
+<<<<<<< HEAD
 =======
 
 >>>>>>> 6eec612dea7612398a3c135f0f90c79956803316
+=======
+>>>>>>> parent of 6eec612... importacion a medias
     	 <div class="formulario">
-                <form id="upload_csv" method="post" enctype="multipart/form-data">  
-                     <div class="col-md-3">  
-                          <br />  
-                          <label>Add More Data</label>  
-                     </div>  
-                     <div class="col-md-4">  
-                          <input type="file" name="employee_file" style="margin-top:15px;" />  
-                     </div>  
-                     <div class="col-md-5">  
-                          <input type="submit" name="upload" id="upload" value="Upload" style="margin-top:10px;" class="btn btn-info" />  
-                     </div>  
-                     <div style="clear:both"></div>  
-                </form> 
+        <form action="vista.php" method="POST" enctype="multipart/form-data">
+            <center>
+            <table>
+                <tr>
+                    <td class="letra" width="250"><strong>Subir Archivo CSV:</strong></td>  
+                    <td><input type="file" name="archivo" class="forma-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="enviar" class="btn btn-primary button-loading" name="enviar" data-loading-text="Loading..."></td>
+                </tr>            
+                </table>
+            </center>
+        </form> 
         </div>   
 			</div>
 <div class="col-md-12">
@@ -352,34 +373,5 @@ include('menu1.php');
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
     <script src="custom/js/vfs_fonts.js"></script>
-    <script>  
-      $(document).ready(function(){  
-           $('#upload_csv').on("submit", function(e){  
-                e.preventDefault(); //form will not submitted  
-                $.ajax({  
-                     url:"import.php",  
-                     method:"POST",  
-                     data:new FormData(this),  
-                     contentType:false,          // The content type used when sending data to the server.  
-                     cache:false,                // To unable request pages to be cached  
-                     processData:false,          // To send DOMDocument or non processed data file it is set to false  
-                     success: function(data){  
-                          if(data=='Error1')  
-                          {  
-                               alert("Invalid File");  
-                          }  
-                          else if(data == "Error2")  
-                          {  
-                               alert("Please Select File");  
-                          }  
-                          else  
-                          {  
-                               $('#employee_table').html(data);  
-                          }  
-                     }  
-                })  
-           });  
-      });  
- </script>  
 </body>
 </html>
