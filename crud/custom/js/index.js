@@ -1,19 +1,36 @@
-// global the manage memeber table 
 var manageMemberTable;
 
 $(document).ready(function() {
+	$('#manageMemberTable tfoot th').each( function () {
+        var title = $('#manageMemberTable thead th').eq( $(this).index() ).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ $("#manageMemberTable tfoot input").on( 'keyup change', function () {
+        manageMemberTable
+            .column( $(this).parent().index()+':visible' )
+            .search( this.value )
+            .draw();
+    } );
+
 	manageMemberTable = $("#manageMemberTable").DataTable({
-			
+			responsive: true,
+        orderFixed: [[5, 'asc']],
+        rowGroup: {
+            dataSrc: 5
+        },
+
+        
 		 "processing": true,
          "sAjaxSource":"php_action/retrieve.php",
 		 "dom": 'lBfrtip',
+
 		 "buttons": 
 		 [
 
 		  {
                 extend: 'print',
                 exportOptions: {
-                    columns: ':visible'
+                  columns: [':visible']
                 }
             },
 
@@ -33,24 +50,27 @@ $(document).ready(function() {
 
             {
                 extend: 'pdfHtml5',
-                pageZise: 'Letter',
-                orientation: 'landscape',                
-                exportOptions: {
-                    columns: ':visible' 
-                                     
-                }
+                orientation: 'landscape',
+                pageSize: 'Letter',
+               
+                  exportOptions: {
+                    columns:  [ ':visible' ]
 
+}
             },
 
             {
-                extend: 'colvis',
+         extend: 'colvis',
                 collectionLayout: 'fixed two-column'
-            }
-        ]            
+               }
+
+           
+        ] 
 
 
 	});
 
+	
 
 	$("#addMemberModalBtn").on('click', function() {
 		// reset the form 
@@ -225,11 +245,9 @@ function removeMember(id = null) {
 			});
 		}); // click remove btn
 	} else {
-		alert('Error: Refresh the page again');
+		alert('Error: Refresh the page again 1');
 	}
 }
-
-
 
 function editMember(id = null) {
 	if(id) {
@@ -291,7 +309,7 @@ function editMember(id = null) {
 
 					if(EditCarnet == "") {
 						$("#EditCarnet").closest('.form-group').addClass('has-error');
-						$("#EditCarnet").after('<p class="text-danger">The Name field is required</p>');
+						$("#EditCarnet").after('<p class="text-danger">The Carnet field is required</p>');
 					} else {
 						$("#EditCarnet").closest('.form-group').removeClass('has-error');
 						$("#EditCarnet").closest('.form-group').addClass('has-success');				
@@ -299,7 +317,7 @@ function editMember(id = null) {
 
 					if(EditNombres == "") {
 						$("#EditNombres").closest('.form-group').addClass('has-error');
-						$("#EditNombres").after('<p class="text-danger">The Address field is required</p>');
+						$("#EditNombres").after('<p class="text-danger">The Nombres field is required</p>');
 					} else {
 						$("#EditNombres").closest('.form-group').removeClass('has-error');
 						$("#EditNombres").closest('.form-group').addClass('has-success');				
@@ -307,7 +325,7 @@ function editMember(id = null) {
 
 					if(EditApellidos == "") {
 						$("#Apellidos").closest('.form-group').addClass('has-error');
-						$("#Apellidos").after('<p class="text-danger">The Contact field is required</p>');
+						$("#Apellidos").after('<p class="text-danger">The Apellidos field is required</p>');
 					} else {
 						$("#Apellidos").closest('.form-group').removeClass('has-error');
 						$("#Apellidos").closest('.form-group').addClass('has-success');				
@@ -315,7 +333,7 @@ function editMember(id = null) {
 
 					if(EditSexo == "") {
 						$("#EditSexo").closest('.form-group').addClass('has-error');
-						$("#EditSexo").after('<p class="text-danger">The Contact field is required</p>');
+						$("#EditSexo").after('<p class="text-danger">The Sexo field is required</p>');
 					} else {
 						$("#EditSexo").closest('.form-group').removeClass('has-error');
 						$("#EditSexo").closest('.form-group').addClass('has-success');				
@@ -323,7 +341,7 @@ function editMember(id = null) {
 
 					if(EditCod_ca == "") {
 						$("#EditCod_ca").closest('.form-group').addClass('has-error');
-						$("#EditCod_ca").after('<p class="text-danger">The Contact field is required</p>');
+						$("#EditCod_ca").after('<p class="text-danger">The Codigo de Carrera field is required</p>');
 					} else {
 						$("#EditCod_ca").closest('.form-group').removeClass('has-error');
 						$("#EditCod_ca").closest('.form-group').addClass('has-success');				
@@ -331,7 +349,7 @@ function editMember(id = null) {
 
 					if(EditTrb_gra == "") {
 						$("#EditTrb_gra").closest('.form-group').addClass('has-error');
-						$("#EditTrb_gra").after('<p class="text-danger">The Contact field is required</p>');
+						$("#EditTrb_gra").after('<p class="text-danger">The Trabajo de Graduacion field is required</p>');
 					} else {
 						$("#EditTrb_gra").closest('.form-group').removeClass('has-error');
 						$("#EditTrb_gra").closest('.form-group').addClass('has-success');				
@@ -339,7 +357,7 @@ function editMember(id = null) {
 
 					if(EditFecha_egre == "") {
 						$("#EditFecha_egre").closest('.form-group').addClass('has-error');
-						$("#EditFecha_egre").after('<p class="text-danger">The Contact field is required</p>');
+						$("#EditFecha_egre").after('<p class="text-danger">The Fecha de Egreso field is required</p>');
 					} else {
 						$("#EditFecha_egre").closest('.form-group').removeClass('has-error');
 						$("#EditFecha_egre").closest('.form-group').addClass('has-success');				
@@ -347,7 +365,7 @@ function editMember(id = null) {
 
 					if(EditFecha_grad == "") {
 						$("#Fecha_grad").closest('.form-group').addClass('has-error');
-						$("#Fecha_grad").after('<p class="text-danger">The Contact field is required</p>');
+						$("#Fecha_grad").after('<p class="text-danger">The Fecha de Graduacion field is required</p>');
 					} else {
 						$("#Fecha_grad").closest('.form-group').removeClass('has-error');
 						$("#Fecha_grad").closest('.form-group').addClass('has-success');				

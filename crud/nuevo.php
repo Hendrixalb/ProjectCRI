@@ -5,7 +5,7 @@
 	$password= $_POST['password'];
 	$rpass=$_POST['rpass'];
 	$rol=$_POST['rol'];
-
+	$active=$_POST['active'];
 
 	require("connect_db.php");
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");

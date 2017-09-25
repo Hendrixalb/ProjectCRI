@@ -25,11 +25,12 @@
     <body>
 
         <div class="page-container">
-            <h1>Login</h1>
+        <img width="130px" src="img/unicaes.png" >
+            <h1>Inicio de Sesión</h1>
             <form action="validar.php" method="post">
-                <input type="text" name="email" class="username" required placeholder="Username">
-                <input type="password" name="pass" class="password" required placeholder="Password">
-                <button type="submit">Sign me in</button>
+                <input type="text" name="email" class="username" required placeholder="Usuario">
+                <input type="password" name="pass" class="password" required placeholder="Contraseña">
+                <button type="submit">Iniciar Sesión</button>
                 <div class="error"><span>+</span></div>
             </form>
            
