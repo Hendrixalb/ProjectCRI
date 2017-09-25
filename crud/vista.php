@@ -32,6 +32,7 @@ include('menu1.php');
 				<center><h1 class="page-header">Sistema de Egresos de Alumnos <small> UNICAES-CRI</small> </h1> </center>
 				<center><strong><label class="titulo">IMPORTAR REGISTROS DESDE ARCHIVO .CSV</label></strong></center>
     <p>
+<<<<<<< HEAD
     	<?php 
     	if (isset($_POST["enviar"])){
     		require_once("connect_db.php");
@@ -67,20 +68,23 @@ include('menu1.php');
     		}
     	}
     	 ?>
+=======
+
+>>>>>>> 6eec612dea7612398a3c135f0f90c79956803316
     	 <div class="formulario">
-        <form action="vista.php" method="POST" enctype="multipart/form-data">
-            <center>
-            <table>
-                <tr>
-                    <td class="letra" width="250"><strong>Subir Archivo CSV:</strong></td>  
-                    <td><input type="file" name="archivo" class="forma-control"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" value="enviar" class="btn btn-primary button-loading" name="enviar" data-loading-text="Loading..."></td>
-                </tr>            
-                </table>
-            </center>
-        </form> 
+                <form id="upload_csv" method="post" enctype="multipart/form-data">  
+                     <div class="col-md-3">  
+                          <br />  
+                          <label>Add More Data</label>  
+                     </div>  
+                     <div class="col-md-4">  
+                          <input type="file" name="employee_file" style="margin-top:15px;" />  
+                     </div>  
+                     <div class="col-md-5">  
+                          <input type="submit" name="upload" id="upload" value="Upload" style="margin-top:10px;" class="btn btn-info" />  
+                     </div>  
+                     <div style="clear:both"></div>  
+                </form> 
         </div>   
 			</div>
 <div class="col-md-12">
@@ -348,5 +352,34 @@ include('menu1.php');
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
     <script src="custom/js/vfs_fonts.js"></script>
+    <script>  
+      $(document).ready(function(){  
+           $('#upload_csv').on("submit", function(e){  
+                e.preventDefault(); //form will not submitted  
+                $.ajax({  
+                     url:"import.php",  
+                     method:"POST",  
+                     data:new FormData(this),  
+                     contentType:false,          // The content type used when sending data to the server.  
+                     cache:false,                // To unable request pages to be cached  
+                     processData:false,          // To send DOMDocument or non processed data file it is set to false  
+                     success: function(data){  
+                          if(data=='Error1')  
+                          {  
+                               alert("Invalid File");  
+                          }  
+                          else if(data == "Error2")  
+                          {  
+                               alert("Please Select File");  
+                          }  
+                          else  
+                          {  
+                               $('#employee_table').html(data);  
+                          }  
+                     }  
+                })  
+           });  
+      });  
+ </script>  
 </body>
 </html>
