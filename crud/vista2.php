@@ -19,7 +19,7 @@ if (@!$_SESSION['user']) {
 </head>
 <body>
 <?php 
-include('menu1.php'); 
+include('menu.php'); 
 ?>
 	<div class="container-fluid">
 		<div class="row">
@@ -32,9 +32,7 @@ include('menu1.php');
 				<center><h1 class="page-header">Sistema de Egresos de Alumnos <small> UNICAES-CRI</small> </h1> </center>
 			</div>
 <div class="col-md-12">
-				<button class="btn btn-default pull pull-right" data-toggle="modal" data-target="#addMember" id="addMemberModalBtn">
-					<span class="glyphicon glyphicon-plus-sign"></span>	Nuevo
-				</button>
+				
 </div>
 <div class="col-md-12">
 	<br>
@@ -57,11 +55,26 @@ include('menu1.php');
 							<th width="1%">Cod-Car</th>
 							<th width="1%">Trb-Gra</th>
 							<th width="1%">Egreso</th>
-							<th width="1%">Graduacion</th>								
-							<th width="1%">Activo</th>
-							<th width="1%">Acciones</th>
+							<th width="1%">Graduacion</th>
+							<th width="1%">Activo</th>								
+						
 						</tr>
 					</thead>
+					
+					<tfoot>
+            <tr>
+                          <th >ID</th>
+							<th >Carnet</th>													
+							<th >Nombres</th>
+							<th >Apellidos</th>
+							<th >Sexo</th>
+							<th >Cod-Car</th>
+							<th >Trb-Gra</th>
+							<th >Egreso</th>
+							<th >Graduación</th>								
+							
+            </tr>
+        </tfoot>
 				</table>
 			</div>
 		</div>
@@ -277,23 +290,44 @@ include('menu1.php');
 	<!-- datatables js -->
 	<script type="text/javascript" src="assests/datatables/datatables.min.js"></script>
 	<!-- include custom index.js -->
-	<script type="text/javascript" src="custom/js/index.js"></script>
+	<script type="text/javascript" src="custom/js/index1.js"></script>
 	
 
 <script type="text/javascript" src="custom/js/buttons.colVis.min.js"></script>
 
 
 		
+		
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css
-"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css"/>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowgroup/1.0.2/css/rowGroup.dataTables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.0.2/js/dataTables.rowGroup.min.js"></script>
+
+
+<!-- jquery librerias filtros por columnas -->
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.4.1/js/dataTables.colReorder.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.4.1/css/colReorder.dataTables.min.css"/>
 
    <script src="custom/js/buttons.dataTables.min.css"></script>
    <link rel="stylesheet" type="text/css" href="custom/js/buttons.dataTables.min.css">
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
+
+
+  <style type="text/css">
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+</style>
 </body>
 </html>

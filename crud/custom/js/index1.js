@@ -2,18 +2,36 @@
 var manageMemberTable;
 
 $(document).ready(function() {
+	$('#manageMemberTable tfoot th').each( function () {
+        var title = $('#manageMemberTable thead th').eq( $(this).index() ).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ $("#manageMemberTable tfoot input").on( 'keyup change', function () {
+        manageMemberTable
+            .column( $(this).parent().index()+':visible' )
+            .search( this.value )
+            .draw();
+    } );
+
 	manageMemberTable = $("#manageMemberTable").DataTable({
-			
+			responsive: true,
+        orderFixed: [[5, 'asc']],
+        rowGroup: {
+            dataSrc: 5
+        },
+
+        
 		 "processing": true,
          "sAjaxSource":"php_action/retrieve.php",
 		 "dom": 'lBfrtip',
+
 		 "buttons": 
 		 [
 
 		  {
                 extend: 'print',
                 exportOptions: {
-                    columns: ':visible'
+                  columns: [':visible']
                 }
             },
 
@@ -33,20 +51,26 @@ $(document).ready(function() {
 
             {
                 extend: 'pdfHtml5',
-                exportOptions: {
-                    columns: [ 0, 1, 2, 5 ]
-                }
+                orientation: 'landscape',
+                pageSize: 'Letter',
+               
+                  exportOptions: {
+                    columns:  [ ':visible' ]
 
+}
             },
 
             {
-                extend: 'colvis',
+         extend: 'colvis',
                 collectionLayout: 'fixed two-column'
-            }
-        ]            
+               }
+
+           
+        ] 
 
 
 	});
+
 
 
 	$("#addMemberModalBtn").on('click', function() {

@@ -49,19 +49,36 @@ include('menu1.php');
 				<table class="table table-hover" id="manageMemberTable">					
 					<thead>
 						<tr>
-							<th width="0.5%">ID</th>
-							<th width="1%">Carnet</th>													
-							<th width="1%">Nombres</th>
-							<th width="1%">Apellidos</th>
-							<th width="1%">Sexo</th>
-							<th width="1%">Cod-Car</th>
-							<th width="1%">Trb-Gra</th>
-							<th width="1%">Egreso</th>
-							<th width="1%">Graduacion</th>								
-							<th width="1%">Activo</th>
-							<th width="1%">Acciones</th>
+							<th >ID</th>
+							<th >Carnet</th>													
+							<th >Nombres</th>
+							<th >Apellidos</th>
+							<th >Sexo</th>
+							<th >Cod-Car</th>
+							<th >Trb-Gra</th>
+							<th >Egreso</th>
+							<th >Graduación</th>								
+							<th >Activo</th>
+							<th >Acciones</th>
 						</tr>
 					</thead>
+
+					<tfoot>
+            <tr>
+                          <th >ID</th>
+							<th >Carnet</th>													
+							<th >Nombres</th>
+							<th >Apellidos</th>
+							<th >Sexo</th>
+							<th >Cod-Car</th>
+							<th >Trb-Gra</th>
+							<th >Egreso</th>
+							<th >Graduación</th>								
+							
+            </tr>
+        </tfoot>
+
+
 				</table>
 			</div>
 		</div>
@@ -76,7 +93,7 @@ include('menu1.php');
 	        <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span>	Nuevo estudiante</h4>
 	      </div>
 	      
-	      <form class="form-horizontal" action="php_action/create.php" method="POST" id="createMemberForm">
+	      <form class="form-horizontal" action="php_action/create.php" method="POST" id="createMemberForm" enctype="multipart/form-data">
 
 	      <div class="modal-body">
 	      	<div class="messages"></div>
@@ -133,19 +150,19 @@ include('menu1.php');
 			    </div>
 			  </div>
 			  <div class="form-group"> <!--/here teh addclass has-error will appear -->
-			    <label for="Fecha_grad" class="col-sm-2 control-label">Graduacion</label>
+			    <label for="Fecha_grad" class="col-sm-2 control-label">Graduación</label>
 			    <div class="col-sm-10"> 
 			      <input type="date" class="form-control" id="Fecha_grad" name="Fecha_grad" placeholder="Graduacion">
 				<!-- here the text will apper  -->
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="active" class="col-sm-2 control-label">Active</label>
+			    <label for="active" class="col-sm-2 control-label">Activo</label>
 			    <div class="col-sm-10">
 			      <select class="form-control" name="active" required id="active">
 			      	<option value="">--Selecione una opcion--</option>
-			      	<option value="1">Activo</option>
-			      	<option value="2">Inactivo</option>
+			      	<option value="1">Completado</option>
+			      	<option value="2">Incompleto</option>
 			      </select>
 			    </div>
 			  </div>			 		
@@ -190,7 +207,7 @@ include('menu1.php');
 	        <h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span> Editar</h4>
 	      </div>
 
-		<form class="form-horizontal" action="php_action/update.php" method="POST" id="updateMemberForm">	      
+		<form class="form-horizontal" action="php_action/update.php" method="POST" id="updateMemberForm" enctype="multipart/form-data">	      
 
 	      <div class="modal-body">
 	        	
@@ -244,7 +261,7 @@ include('menu1.php');
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="EditFecha_grad" class="col-sm-2 control-label">Graduacion</label>
+			    <label for="EditFecha_grad" class="col-sm-2 control-label">Graduación</label>
 			    <div class="col-sm-10">
 			      <input type="date" class="form-control" id="EditFecha_grad" name="EditFecha_grad" placeholder="Graduacion">
 			    </div>
@@ -254,8 +271,8 @@ include('menu1.php');
 			    <div class="col-sm-10">
 			      <select class="form-control" name="Editactive" required id="Editactive">
 			      	<option value="">--Selecione una opcion--</option>
-			      	<option value="1">Activo</option>
-			      	<option value="2">Inactivo</option>
+			      	<option value="1">Completado</option>
+			      	<option value="2">Incompleto</option>
 			      </select>
 			    </div>
 			  </div>	
@@ -269,8 +286,7 @@ include('menu1.php');
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<!-- /edit modal -->
-
-	<!-- jquery plugin -->
+<!-- jquery plugin -->
 	<script type="text/javascript" src="assests/jquery/jquery.min.js"></script>
 	<!-- bootstrap js -->
 	<script type="text/javascript" src="assests/bootstrap/js/bootstrap.min.js"></script>
@@ -286,14 +302,35 @@ include('menu1.php');
 		
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css
-"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css"/>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowgroup/1.0.2/css/rowGroup.dataTables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.0.2/js/dataTables.rowGroup.min.js"></script>
+
+
+<!-- jquery librerias filtros por columnas -->
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.4.1/js/dataTables.colReorder.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.4.1/css/colReorder.dataTables.min.css"/>
 
    <script src="custom/js/buttons.dataTables.min.css"></script>
    <link rel="stylesheet" type="text/css" href="custom/js/buttons.dataTables.min.css">
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
+
+
+  <style type="text/css">
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+</style>
+
 </body>
 </html>
