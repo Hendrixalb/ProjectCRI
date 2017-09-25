@@ -35,12 +35,12 @@ include('menu1.php');
     	<?php 
     	if (isset($_POST["enviar"])){
     		require_once("connect_db.php");
-    		require_once("subir_archivo.php");
+    		
     		require_once("function.php");
 
     		$archivo = $_FILES["archivo"]["name"];
     		$archivo_copiado = ($_FILES["archivo"]["tmp_name"]);
-    		$archivo_guardado = "copia_".$archivo;
+    		$archivo_guardado = "Upload/".$archivo;
 
     		if (copy($archivo_copiado, $archivo_guardado)) {
     			echo "Se copio correctamente el archivo temporal a la carpeta de trabajo <br/>";
@@ -51,10 +51,10 @@ include('menu1.php');
     		if (file_exists($archivo_guardado)) {
     			$fp = fopen($archivo_guardado, "r");
     			$rows = 0;
-    			while ($datos = fgetcsv($fp, 100000000000000, ";")) {
+    			while ($datos = fgetcsv($fp, 10000, ";")) {
     				$rows ++;
     				if ($rows > 1) {
-    					$resultado = insertar($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
+    					$resultado = insertar($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9],$datos[10]);
     					if ($resultado) {
     						echo "Se insertaron correctamente los datos <br/>";
     					}else{
