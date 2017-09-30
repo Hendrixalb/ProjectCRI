@@ -73,7 +73,9 @@ include('menu1.php');
 							<th >Cod-Car</th>
 							<th >Trb-Gra</th>
 							<th >Egreso</th>
-							<th >Graduación</th>								
+							<th >Graduación</th>
+							<th>Activo</th>
+							<th>Acciones</th>								
 							
             </tr>
         </tfoot>

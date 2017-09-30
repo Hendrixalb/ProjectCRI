@@ -11,17 +11,17 @@ $id = 1;
 while ($row = $query->fetch_assoc()) {
 	$active = '';
 	if(($row['Fecha_egre'] == 0000-00-00)and($row['Fecha_grad'] == 0000-00-00))  {
-<<<<<<< HEAD
+
 		$active = '<div><label class="label label-danger">Incompleto</label></div>';
 	}
 elseif (($row['Fecha_egre']  != 0000-00-00)and($row['Fecha_grad']  != 0000-00-00)) {
 $active = '<label class="label label-success label-lg">*Completo*</label>'; 
-=======
+
 		$active = '<div><label class="label label-danger">NO concluido</label></div>';
 	}
 elseif (($row['Fecha_egre']  != 0000-00-00)and($row['Fecha_grad']  != 0000-00-00)) {
 $active = '<label class="label label-success label-lg">Completado</label>'; 
->>>>>>> 6a130b1f64693f3dabd4dcf940497fa2c354cdf3
+
 }
 
 	 else {
