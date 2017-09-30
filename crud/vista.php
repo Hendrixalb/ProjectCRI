@@ -75,7 +75,7 @@ include('menu1.php');
 							<th >Egreso</th>
 							<th >Graduación</th>
 							<th>Activo</th>
-							<th>Acciones</th>								
+														
 							
             </tr>
         </tfoot>
