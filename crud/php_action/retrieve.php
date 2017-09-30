@@ -7,16 +7,14 @@ $output = array('data' => array());
 $sql = "SELECT * FROM estudiantes";
 $query = $connect->query($sql);
 
-$id = 1;
+$x = 1;
 while ($row = $query->fetch_assoc()) {
 	$active = '';
 	if(($row['Fecha_egre'] == 0000-00-00)and($row['Fecha_grad'] == 0000-00-00))  {
-
 		$active = '<div><label class="label label-danger">Incompleto</label></div>';
 	}
-elseif (($row['Fecha_egre']  != 0000-00-00)and($row['Fecha_grad']  = !0000-00-00)) {
+elseif (($row['Fecha_egre']  != 0000-00-00)and($row['Fecha_grad']  != 0000-00-00)) {
 $active = '<label class="label label-success label-lg">*Completo*</label>'; 
-
 }
 
 	 else {
@@ -36,7 +34,7 @@ $active = '<label class="label label-success label-lg">*Completo*</label>';
 		';
 
 	$output['data'][] = array(
-		$row['id'],
+		$x,
 		$row['Carnet'],
 		$row['Nombres'],
 		$row['Apellidos'],
@@ -49,7 +47,7 @@ $active = '<label class="label label-success label-lg">*Completo*</label>';
 		$actionButton
 	);
 
-	$id++;
+	$x++;
 }
 
 // database connection close

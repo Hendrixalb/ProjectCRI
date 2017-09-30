@@ -6,11 +6,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="vista.php">Inicio</a></li>
    <li ><a href="admin.php">Registro de Usuarios </a></li>
-
         <li ><a href="importar.php">Importar Usuarios CSV </a></li>
-
-      
-
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Bienvenido <strong><?php echo $_SESSION['user'];?></strong></a></li>
