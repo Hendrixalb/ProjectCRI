@@ -1,0 +1,69 @@
+<? php 
+// cargar el archivo de configuración de la base de datos 
+incluye  'dbConfig.php' ; 
+
+if (! empty ( $ _GET [ 'status' ])) { 
+    switch ( $ _GET [ 'status' ]) { 
+        case  'succ' : 
+            $ statusMsgClass  =  'alerta-éxito' ; 
+            $ statusMsg  =  'Los datos de los miembros se han insertado correctamente.' ; 
+            descanso; 
+        case  'err' : 
+            $ statusMsgClass  =  'alerta-peligro' ; 
+            $ statusMsg  =  'Se ha producido algún problema, inténtalo de nuevo ;
+            descanso; 
+        case  'invalid_file' : 
+            $ statusMsgClass  =  'alerta-peligro' ; 
+            $ statusMsg =  ' Cargue  un archivo CSV válido.' ; 
+            descanso; 
+        default: 
+            $ statusMsgClass  =  '' ; 
+            $ statusMsg  =  '' ; 
+    } 
+} 
+? 
+< div  class = "container" >
+     <? php  if (! empty ( $ statusMsg )) { 
+        echo  '<div class = "alert" . $ statusMsgClass .. $ statusMsg . '</ div>' ; 
+    }  ?> 
+    < div  class = "panel panel-default" >
+        < div  class = "panel-heading" >
+            Lista de miembros
+            < a  href = "javascript: void (0);"  onclick = "$ ('# importFrm'). slideToggle ();" > Importar miembros </ a >
+        </ div >
+        < div  class = "panel-body" >
+            < form  action = "importData.php"  method = "publicar"  enctype = "multipart / form-data"  id = "importFrm" >
+                < input  type = "file"  name = "file" />
+                < input  type = "submit"  class = "btn btn-primario"  name = "importSubmit"  value = "IMPORT" >
+            </ form >
+            < table  class = "table table-bordered" >
+                < thead >
+                    < tr >
+                      < th > Nombre </ th >
+                      < th > Correo electrónico </ th >
+                      < th > Teléfono </ th >
+                      < th > Creado </ th >
+                      < th > Estado </ th >
+                    </ tr >
+                </ thead >
+                < tbody >
+                 <? php 
+                    // obtener registros de la base de datos 
+                    $ query  =  $ db -> query ( "SELECT * FROM members ORDER BY id DESC" ); 
+                    ( $ query -> num_rows  >  0 ) {  
+                        while ( $ row  =  $ query -> fetch_assoc ()) { ?> 
+                    < tr >
+                      < td > <? php  echo  $ row [ 'nombre' ]; ?> </ td >
+                      < td > <? php  echo  $ row [ 'correo electrónico' ]; ?> </ td >
+                      < td > <? php  echo  $ row [ 'teléfono' ]; ?> </ td >
+                      < td > <? php  echo  $ row [ 'created' ]; ?> </ td >
+                      < td > <? php  echo ( $ row [ 'status' ] ==  '1' )? 'Activo' : 'Inactivo' ; ?> </ td >
+                    </ tr >
+                     <? php  }} else {  ?> 
+                    < tr > < td  colspan = "5" > Ningún miembro encontrado ..... </ td > </ tr >
+                     <? php  }  ?> 
+                < / tbody >
+            </ table >
+        </ div >
+    </ div >
+</ div >
