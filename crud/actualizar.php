@@ -64,7 +64,7 @@ include("menu1.php");
 
 
 		?>
-<div class="col-md-offset-4">
+<div class="col-md-offset-3">
 		<form action="ejecutaactualizar.php" method="post">
 			<div class="col-md-offset-9"><input type="submit" value="Guardar" class="btn btn-success btn-primary"></div>
 			<br>
