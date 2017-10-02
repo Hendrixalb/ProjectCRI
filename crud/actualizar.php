@@ -33,14 +33,14 @@ include("menu1.php");
 	
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
-		<div class="container-fluid">
+				<div class="container-fluid">
         <div class="row">
-            
+            <div class="col-md-12">
             <div class="col-md-1">
                 <img width="100px" src="img/logou.png">
             </div>
-
-			<br>
+<div  class="container">
+		<div class="container">
 		<h2 align="center"> Administración de Usuarios Registrados</h2>
 
 		
@@ -66,8 +66,6 @@ include("menu1.php");
 		?>
 <div class="col-md-offset-3">
 		<form action="ejecutaactualizar.php" method="post">
-			<div class="col-md-offset-9"><input type="submit" value="Guardar" class="btn btn-success btn-primary"></div>
-			<br>
 <div class="col-md-8">
 				Id<br><input type="text" name="id" value= "<?php echo $id ?>" class="form-control" readonly="readonly"><br>
 				Usuario<br> <input type="text" name="user" required value="<?php echo $user?>" class="form-control"><br>
@@ -85,7 +83,7 @@ include("menu1.php");
 					<option value="inactivo">inactivo</option>
 				</select><br>
 		
-				
+				<input type="submit" value="Guardar" class="btn btn-success btn-primary">
 				</div>
 			</form>
 </div>
