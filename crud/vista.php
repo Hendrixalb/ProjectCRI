@@ -8,16 +8,26 @@ if (@!$_SESSION['user']) {
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-<head>
+
 	<title>Sistema de control de estudiantes</title>
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
 	<!-- datatables css -->
 	<link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
-
+<script src="js/push.min.js"></script>
 </head>
 <body>
+		<script>Push.create("Prueba!", {
+    body: "Notificacion",
+    icon: 'img/logou.png',
+    timeout: 4000,
+    onClick: function () {
+        window.location="https://www.google.com.sv";
+        this.close();
+    }
+});</script>
+
 <?php 
 include('menu1.php'); 
 ?>
@@ -58,7 +68,7 @@ include('menu1.php');
 							<th >Trb-Gra</th>
 							<th >Egreso</th>
 							<th >Graduación</th>								
-							<th >Activo</th>
+							<th >Estado</th>
 							<th >Acciones</th>
 						</tr>
 					</thead>

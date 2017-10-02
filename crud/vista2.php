@@ -6,21 +6,34 @@ if (@!$_SESSION['user']) {
 }
 ?>
 <html lang="es">
+
+	
 <head>
 	<meta charset="UTF-8">
-<head>
 	<title>Sistema de control de estudiantes</title>
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="assests/bootstrap/css/bootstrap.min.css">
 	<!-- datatables css -->
 	<link rel="stylesheet" type="text/css" href="assests/datatables/datatables.min.css">
-
+<script src="js/push.min.js"></script>
 </head>
 <body>
+	<script>Push.create("Hello world!", {
+    body: "How's it hangin'?",
+    icon: 'img/logou.png',
+    timeout: 4000,
+    onClick: function () {
+        window.focus();
+        this.close();
+    }
+});</script>
 <?php 
 include('menu.php'); 
 ?>
+
+
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
@@ -56,7 +69,7 @@ include('menu.php');
 							<th width="1%">Trb-Gra</th>
 							<th width="1%">Egreso</th>
 							<th width="1%">Graduacion</th>
-							<th width="1%">Activo</th>								
+							<th width="1%">Estado</th>								
 						
 						</tr>
 					</thead>
@@ -318,7 +331,7 @@ include('menu.php');
    <link rel="stylesheet" type="text/css" href="custom/js/buttons.dataTables.min.css">
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
-
+<link rel="stylesheet" href="stilo/css/Footer.css">
 
   <style type="text/css">
 
@@ -329,5 +342,6 @@ tfoot input {
     }
 
 </style>
+<?php include("footer.php") ?>
 </body>
 </html>
