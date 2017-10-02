@@ -320,6 +320,7 @@ include('menu1.php');
    <link rel="stylesheet" type="text/css" href="custom/js/buttons.dataTables.min.css">
    <link rel="stylesheet" type="text/css" href="custom/js/jquery.dataTables.min.css">
     <script src="custom/js/jquery.dataTables.min.css"></script>
+    <link rel="stylesheet" href="stilo/css/Footer.css">
 
 
   <style type="text/css">
