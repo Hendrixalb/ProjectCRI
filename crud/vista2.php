@@ -23,6 +23,7 @@ if (@!$_SESSION['user']) {
     body: "How's it hangin'?",
     icon: 'img/logou.png',
     timeout: 4000,
+    vibrate: [100,100,100],
     onClick: function () {
         window.focus();
         this.close();

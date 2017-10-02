@@ -22,6 +22,7 @@ if (@!$_SESSION['user']) {
     body: "Notificacion",
     icon: 'img/logou.png',
     timeout: 4000,
+    vibrate: [100,100,100],
     onClick: function () {
         window.location="https://www.google.com.sv";
         this.close();
