@@ -25,7 +25,17 @@ if (@!$_SESSION['user']) {
 include("menu1.php");
    ?>
 
-    <h2> Administración de usuarios registrados</h2>  
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="col-md-1">
+                <img width="100px" src="img/logou.png">
+            </div>
+			<br>
+					</br>
+<div  class="container">
+		<div class="container">
+		<h2 align="center">Administración de usuarios registrados</h2>  
 
     
 <div class="col-md-offset-3">

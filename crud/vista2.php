@@ -20,7 +20,6 @@ if (@!$_SESSION['user']) {
 </head>
 <body>
 	<script>Push.create("Bienvenido!", {
-    body: "How's it hangin'?",
     icon: 'img/logou.png',
     timeout: 4000,
     vibrate: [100,100,100],
