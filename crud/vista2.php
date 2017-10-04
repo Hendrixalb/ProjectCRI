@@ -19,7 +19,7 @@ if (@!$_SESSION['user']) {
 <script src="js/push.min.js"></script>
 </head>
 <body>
-	<script>Push.create("Hello world!", {
+	<script>Push.create("Bienvenido!", {
     body: "How's it hangin'?",
     icon: 'img/logou.png',
     timeout: 4000,

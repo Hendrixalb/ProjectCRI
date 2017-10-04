@@ -18,13 +18,13 @@ if (@!$_SESSION['user']) {
 <script src="js/push.min.js"></script>
 </head>
 <body>
-		<script>Push.create("Prueba!", {
+		<script>Push.create("Bienvenido!", {
     body: "Notificacion",
     icon: 'img/logou.png',
     timeout: 4000,
     vibrate: [100,100,100],
     onClick: function () {
-        window.location="https://www.google.com.sv";
+        window.location="";
         this.close();
     }
 });</script>
